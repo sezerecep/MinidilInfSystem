@@ -418,6 +418,14 @@
             "Saturday"});
             this.CBday.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CBday.FormattingEnabled = true;
+            this.CBday.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
             this.CBday.Location = new System.Drawing.Point(75, 3);
             this.CBday.Name = "CBday";
             this.CBday.Size = new System.Drawing.Size(162, 21);
@@ -536,6 +544,7 @@
             this.BTadd.TabIndex = 6;
             this.BTadd.Text = "Add";
             this.BTadd.UseVisualStyleBackColor = false;
+            this.BTadd.Click += new System.EventHandler(this.BTadd_Click);
             // 
             // BTcancel
             // 
@@ -553,6 +562,7 @@
             this.BTcancel.TabIndex = 6;
             this.BTcancel.Text = "Cancel";
             this.BTcancel.UseVisualStyleBackColor = false;
+            this.BTcancel.Click += new System.EventHandler(this.BTcancel_Click);
             // 
             // BTsave
             // 
@@ -570,6 +580,7 @@
             this.BTsave.TabIndex = 6;
             this.BTsave.Text = "Save";
             this.BTsave.UseVisualStyleBackColor = false;
+            this.BTsave.Click += new System.EventHandler(this.BTsave_Click);
             // 
             // tableLayoutPanel10
             // 

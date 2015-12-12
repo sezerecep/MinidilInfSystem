@@ -35,6 +35,10 @@ namespace MinidilInformationSystem
                         if (ret)
                         {
                             MessageBox.Show("Changes Saved Succesfully", "Save Succcesfull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                            FMyonetici fm = new FMyonetici(mail);
+                            fm.ShowDialog();
+                            this.Close();
                         }
                         else
                         {

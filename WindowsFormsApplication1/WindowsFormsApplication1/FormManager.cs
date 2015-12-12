@@ -102,7 +102,7 @@ namespace MinidilInformationSystem
         private void BTcrteditless_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FMcrtedtlesson fm = new FMcrtedtlesson();
+            FMcrtedtlesson fm = new FMcrtedtlesson(mail);
             fm.ShowDialog();
             this.Close();
         }
