@@ -98,14 +98,18 @@ namespace MinidilInformationSystem
                     if (TBedtclassname.Text!="")
                     {
                         bool ret;
-                        ret = con.NonReturnQuery("UPDATE classes SET class_name='"+TBedtclassname.Text+ "',updated_at='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'");
+                        ret = con.NonReturnQuery("UPDATE classes SET class_name='"+TBedtclassname.Text+ "',updated_at='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE class_name='"+CBclasses.SelectedItem.ToString()+"'");
                         if (ret)
                         {
-                            MessageBox.Show("Changes Saved Successfully", "Changes Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DialogResult res1;
+                            res1=MessageBox.Show("Changes Saved Successfully", "Changes Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (res1 == DialogResult.OK)
+                            {
                                 this.Hide();
                                 FMyonetici fm = new FMyonetici(mail);
                                 fm.ShowDialog();
                                 this.Close();
+                            }
                         }
                         else
                         {
@@ -125,6 +129,7 @@ namespace MinidilInformationSystem
                 fm.ShowDialog();
                 this.Close();
             }
+           
 
         }
 

@@ -34,7 +34,7 @@ namespace MinidilInformationSystem
                         bool suc1;
                         if (RBfem.Checked)
                         {
-                            suc = con.NonReturnQuery("INSERT INTO users VALUES('" + TBtc.Text + "','" + TBname.Text + "','" + TBsurname.Text + "','" 
+                            suc = con.NonReturnQuery("INSERT INTO users VALUES(" + TBtc.Text + ",'" + TBname.Text + "','" + TBsurname.Text + "','" 
                                                                                                 + TBmail.Text + "','" + DTP1.Value.Date.ToString("yyyy-MM-dd HH:mm:ss") 
                                                                                                 + "','" + TBphone.Text + "','f','" + TBtc.Text 
                                                                                                 + "','" + TBresetpass.Text + "','" + TBresetansw.Text 
@@ -283,9 +283,6 @@ namespace MinidilInformationSystem
             }
         }
 
-        private void FMcrtedtmanager_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

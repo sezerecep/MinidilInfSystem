@@ -1362,7 +1362,6 @@
             this.Name = "FMcrtedtmanager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Minidil Information System";
-            this.Load += new System.EventHandler(this.FMcrtedtmanager_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

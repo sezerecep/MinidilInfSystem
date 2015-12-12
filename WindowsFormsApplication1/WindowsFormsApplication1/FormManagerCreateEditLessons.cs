@@ -16,5 +16,19 @@ namespace MinidilInformationSystem
         {
             InitializeComponent();
         }
+
+        private void FMcrtedtlesson_Load(object sender, EventArgs e)
+        {
+            DatabaseConnection con = new DatabaseConnection();
+            if(con.is_Connected())
+            {
+                DataTable tab = new DataTable();
+                tab = con.ReturningQuery("SELECT level_name FROM levels");
+                foreach(DataRow rw in tab.Rows)
+                {
+                    CBlevel.Items.Add(rw[0].ToString());
+                }
+            }
+        }
     }
 }

@@ -54,15 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exam.cs" />
     <Compile Include="FormManagerRpt.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormManagerRpt.Designer.cs">
       <DependentUpon>FormManagerRpt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Level.cs" />
-    <Compile Include="PhsicalClass.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="FormManagerCreateEditClass.cs">
       <SubType>Form</SubType>
@@ -166,7 +163,6 @@
     <Compile Include="FormTeacherSchedule.Designer.cs">
       <DependentUpon>FormTeacherSchedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lesson.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FormStudentShAbs.cs">
@@ -181,9 +177,6 @@
     <Compile Include="FormStudentShowExams.Designer.cs">
       <DependentUpon>FormStudentShowExams.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student.cs" />
-    <Compile Include="Teacher.cs" />
-    <Compile Include="User.cs" />
     <EmbeddedResource Include="FormManagerCreateEditClass.resx">
       <DependentUpon>FormManagerCreateEditClass.cs</DependentUpon>
     </EmbeddedResource>

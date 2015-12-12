@@ -17,7 +17,7 @@ namespace MinidilInformationSystem
         {
             try
             {
-                connection = new MySqlConnection("Server=db4free.net;Database=minidil;Uid=minidil;Pwd='15241524'");
+                connection = new MySqlConnection("Server=127.0.0.1;Database=minidil;Uid=root;Pwd='didemhatun1103'");
                 connection.Open();
                 return true;
             }
@@ -34,8 +34,17 @@ namespace MinidilInformationSystem
         {
             if (this.is_Connected())
             {
+                int effrow;
                 MySqlCommand comm = new MySqlCommand(command, this.connection);
-                if (comm.ExecuteNonQuery() <= 0)
+                try
+                {
+                     effrow = comm.ExecuteNonQuery();
+                }
+                catch(Exception e)
+                {
+                    effrow = 0;
+                }
+                if (effrow <= 0)
                 {
                     return false;
                 }

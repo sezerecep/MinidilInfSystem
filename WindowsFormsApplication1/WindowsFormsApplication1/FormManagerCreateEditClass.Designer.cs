@@ -393,6 +393,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FMcrtedtclass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Minidil Information System";
             this.Load += new System.EventHandler(this.FMcrtedtclass_Load);
             this.tableLayoutPanel5.ResumeLayout(false);
