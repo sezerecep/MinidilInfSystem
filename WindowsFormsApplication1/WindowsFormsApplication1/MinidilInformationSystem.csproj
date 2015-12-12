@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE088097-D12A-42C8-95E3-9D475BF06EEF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MinidilInformationSystem</RootNamespace>
+    <AssemblyName>MinidilInformationSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons-Land-Vista-Flags-English-Language-Flag-1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exam.cs" />
+    <Compile Include="FormManagerRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManagerRpt.Designer.cs">
+      <DependentUpon>FormManagerRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Level.cs" />
+    <Compile Include="PhsicalClass.cs" />
+    <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="FormManagerCreateEditClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManagerCreateEditClass.Designer.cs">
+      <DependentUpon>FormManagerCreateEditClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManagerCreateEditLessons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManagerCreateEditLessons.Designer.cs">
+      <DependentUpon>FormManagerCreateEditLessons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManagerCreateEditLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManagerCreateEditLevel.Designer.cs">
+      <DependentUpon>FormManagerCreateEditLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManagerCrEtdManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManagerCrEtdManager.Designer.cs">
+      <DependentUpon>FormManagerCrEtdManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManagerCrEtdStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManagerCrEtdStudent.Designer.cs">
+      <DependentUpon>FormManagerCrEtdStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManagerCrEtdTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManagerCrEtdTeacher.Designer.cs">
+      <DependentUpon>FormManagerCrEtdTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManagerEditAbsence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManagerEditAbsence.Designer.cs">
+      <DependentUpon>FormManagerEditAbsence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTeacherEditExams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTeacherEditExams.Designer.cs">
+      <DependentUpon>FormTeacherEditExams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMainResetPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMainResetPass.Designer.cs">
+      <DependentUpon>FormMainResetPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMainLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMainLogin.Designer.cs">
+      <DependentUpon>FormMainLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudent.Designer.cs">
+      <DependentUpon>FormStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStudentSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudentSchedule.Designer.cs">
+      <DependentUpon>FormStudentSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTeacher.Designer.cs">
+      <DependentUpon>FormTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManager.Designer.cs">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMainForgotPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMainForgotPass.Designer.cs">
+      <DependentUpon>FormMainForgotPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTeacherLessonShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTeacherLessonShow.Designer.cs">
+      <DependentUpon>FormTeacherLessonShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTeacherSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTeacherSchedule.Designer.cs">
+      <DependentUpon>FormTeacherSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lesson.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormStudentShAbs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudentShAbs.Designer.cs">
+      <DependentUpon>FormStudentShAbs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStudentShowExams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudentShowExams.Designer.cs">
+      <DependentUpon>FormStudentShowExams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student.cs" />
+    <Compile Include="Teacher.cs" />
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="FormManagerCreateEditClass.resx">
+      <DependentUpon>FormManagerCreateEditClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManagerCreateEditLessons.resx">
+      <DependentUpon>FormManagerCreateEditLessons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManagerCreateEditLevel.resx">
+      <DependentUpon>FormManagerCreateEditLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManagerCrEtdManager.resx">
+      <DependentUpon>FormManagerCrEtdManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManagerCrEtdStudent.resx">
+      <DependentUpon>FormManagerCrEtdStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManagerCrEtdTeacher.resx">
+      <DependentUpon>FormManagerCrEtdTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManagerEditAbsence.resx">
+      <DependentUpon>FormManagerEditAbsence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManagerRpt.resx">
+      <DependentUpon>FormManagerRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTeacherEditExams.resx">
+      <DependentUpon>FormTeacherEditExams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMainForgotPass.resx">
+      <DependentUpon>FormMainForgotPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMainResetPass.resx">
+      <DependentUpon>FormMainResetPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMainLogin.resx">
+      <DependentUpon>FormMainLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStudent.resx">
+      <DependentUpon>FormStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStudentSchedule.resx">
+      <DependentUpon>FormStudentSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTeacher.resx">
+      <DependentUpon>FormTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManager.resx">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTeacherLessonShow.resx">
+      <DependentUpon>FormTeacherLessonShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTeacherSchedule.resx">
+      <DependentUpon>FormTeacherSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FormStudentShAbs.resx">
+      <DependentUpon>FormStudentShAbs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStudentShowExams.resx">
+      <DependentUpon>FormStudentShowExams.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons-Land-Vista-Flags-English-Language-Flag-1.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
