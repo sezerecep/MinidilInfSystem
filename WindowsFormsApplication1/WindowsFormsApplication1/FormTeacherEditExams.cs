@@ -38,20 +38,22 @@ namespace MinidilInformationSystem
             if (con.is_Connected())
             {
                 DataTable tab = con.ReturningQuery("CALL tcfromemail ('" + mail + "')");
-                DataTable tab1 = con.ReturningQuery("SELECT viewexam");
-                tab1.Columns[0].ColumnName = "Exam Name";
-                tab1.Columns[1].ColumnName = "Level";
-                tab1.Columns[2].ColumnName = "Lesson";
-                tab1.Columns[3].ColumnName = "Class";
-                tab1.Columns[4].ColumnName = "Date/Time";
-                DGV1.DataSource = tab1;
-                for (int i = 0; i < DGV1.Rows.Count - 1; i++)
+                DataTable tab1 = con.ReturningQuery("SELECT * FROM viewexam");
+                if (tab1.TableName!="Connected but Empty")
                 {
-                    DGV1.Rows[i].Cells[0].ReadOnly = true;
-                    DGV1.Rows[i].Cells[1].ReadOnly = true;
-                    DGV1.Rows[i].Cells[2].ReadOnly = true;
-                    DGV1.Rows[i].Cells[3].ReadOnly = true;
+                    tab1.Columns[2].ColumnName = "Exam Name";
+                    tab1.Columns[0].ColumnName = "Lesson";
+                    tab1.Columns[1].ColumnName = "Class";
+                    tab1.Columns[3].ColumnName = "Date/Time";
+                    DGV1.DataSource = tab1;
+                    for (int i = 0; i < DGV1.Rows.Count - 1; i++)
+                    {
+                        DGV1.Rows[i].Cells[0].ReadOnly = true;
+                        DGV1.Rows[i].Cells[1].ReadOnly = true;
+                        DGV1.Rows[i].Cells[2].ReadOnly = true;
+                        DGV1.Rows[i].Cells[3].ReadOnly = true;
 
+                    }
                 }
             }
         }
@@ -65,7 +67,7 @@ namespace MinidilInformationSystem
                 tab = con.ReturningQuery("CALL getlessonsandclasses ('" + CBlevel.SelectedItem.ToString() + "');");
                 foreach (DataRow rw in tab.Rows)
                 {
-                    CBlessonclasses.Items.Add(rw[0].ToString());
+                    CBlessonclasses.Items.Add(rw[0].ToString()+" "+rw[1].ToString());
                 }
             }
 
@@ -84,8 +86,8 @@ namespace MinidilInformationSystem
                     {
                         bool suc;
                         string[] bol = CBlessonclasses.SelectedItem.ToString().Split(' ');
-                        suc = con.NonReturnQuery("INSERT INTO exams VALUES('" + bol[0].ToString() + "," + bol[1].ToString() + "," + TBname.ToString() + ","
-                            + DTP1.Value.ToString("yyyy - MM - dd HH: mm:ss") + "," + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ",'NULL');");
+                        suc = con.NonReturnQuery("INSERT INTO exams VALUES('" + bol[0] + "','" + bol[1]+ "','" + TBname.Text + "','"
+                            + DTP1.Value.ToString("yyyy-MM-dd HH:mm:ss") + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',NULL);");
 
                         if (suc)
                         {
@@ -120,10 +122,6 @@ namespace MinidilInformationSystem
                 this.Close();
             }
         }
-
-
-
-
         private void BTsave_Click(object sender, EventArgs e)
         {
             DatabaseConnection con = new DatabaseConnection();
@@ -193,8 +191,9 @@ namespace MinidilInformationSystem
                     
 
 
-                    suc = con.NonReturnQuery("DELETE FROM exams WHERE(exam_name='" + dtRow.ItemArray[2] + ",class_name='" + dtRow.ItemArray[1] + "',lesson_name='" + dtRow.ItemArray[0] + "',exam_date_time='"
-                        + dtRow.ItemArray[3] + "');");
+                    suc = con.NonReturnQuery("DELETE FROM exams WHERE(exam_name='" + dtRow.ItemArray[0].ToString() + "' AND class_name='" + dtRow.ItemArray[2].ToString() + "' AND lesson_name='" + dtRow.ItemArray[1].ToString() + "' AND exam_date_time='"
+                        + Convert.ToDateTime(dtRow.ItemArray[3].ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "');");
+                    
 
                     
                 }
