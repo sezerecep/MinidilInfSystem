@@ -245,6 +245,7 @@
             this.BTedtexms.Text = "Edit Exams";
             this.BTedtexms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTedtexms.UseVisualStyleBackColor = true;
+            this.BTedtexms.Click += new System.EventHandler(this.BTedtexms_Click);
             // 
             // BTsshlessstudent
             // 

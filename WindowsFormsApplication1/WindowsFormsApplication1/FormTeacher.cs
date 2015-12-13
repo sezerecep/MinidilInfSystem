@@ -47,5 +47,13 @@ namespace MinidilInformationSystem
             fm.ShowDialog();
             this.Close();
         }
+
+        private void BTedtexms_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FMedtexams fm = new FMedtexams(mail);
+            fm.ShowDialog();
+            this.Close();
+        }
     }
 }
