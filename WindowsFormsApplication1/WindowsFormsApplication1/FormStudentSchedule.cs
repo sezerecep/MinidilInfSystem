@@ -42,5 +42,7 @@ namespace MinidilInformationSystem
             fm.ShowDialog();
             this.Close();
         }
+
+       
     }
 }
