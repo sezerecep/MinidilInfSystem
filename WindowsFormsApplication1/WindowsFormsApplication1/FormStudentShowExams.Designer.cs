@@ -44,6 +44,7 @@
             // 
             // DGV1
             // 
+            this.DGV1.AllowUserToAddRows = false;
             this.DGV1.AllowUserToDeleteRows = false;
             this.DGV1.AllowUserToResizeColumns = false;
             this.DGV1.AllowUserToResizeRows = false;

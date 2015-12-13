@@ -33,21 +33,21 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTP1 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CBstudent = new System.Windows.Forms.ComboBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CBlesss = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.CBlevel = new System.Windows.Forms.ComboBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BTsave = new System.Windows.Forms.Button();
+            this.BTcancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -109,17 +109,17 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker1, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.DTP1, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 2, 3);
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.comboBox2, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.CBstudent, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox3, 2, 2);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox4, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.comboBox1, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.CBlesss, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.comboBox3, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.CBlevel, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.pictureBox5, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
@@ -132,13 +132,13 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(812, 129);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // DTP1
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(273, 102);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(264, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.DTP1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.DTP1.Location = new System.Drawing.Point(273, 102);
+            this.DTP1.Name = "DTP1";
+            this.DTP1.Size = new System.Drawing.Size(264, 20);
+            this.DTP1.TabIndex = 7;
             // 
             // pictureBox2
             // 
@@ -171,14 +171,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Pick Student :";
             // 
-            // comboBox2
+            // CBstudent
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(273, 69);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(264, 21);
-            this.comboBox2.TabIndex = 6;
+            this.CBstudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBstudent.FormattingEnabled = true;
+            this.CBstudent.Location = new System.Drawing.Point(273, 69);
+            this.CBstudent.Name = "CBstudent";
+            this.CBstudent.Size = new System.Drawing.Size(264, 21);
+            this.CBstudent.TabIndex = 6;
             // 
             // pictureBox3
             // 
@@ -202,14 +202,15 @@
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             // 
-            // comboBox1
+            // CBlesss
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(273, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(264, 21);
-            this.comboBox1.TabIndex = 5;
+            this.CBlesss.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBlesss.FormattingEnabled = true;
+            this.CBlesss.Location = new System.Drawing.Point(273, 37);
+            this.CBlesss.Name = "CBlesss";
+            this.CBlesss.Size = new System.Drawing.Size(264, 21);
+            this.CBlesss.TabIndex = 5;
+            this.CBlesss.SelectedIndexChanged += new System.EventHandler(this.CBlesss_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -231,14 +232,15 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Pick Level :";
             // 
-            // comboBox3
+            // CBlevel
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(273, 5);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(264, 21);
-            this.comboBox3.TabIndex = 5;
+            this.CBlevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBlevel.FormattingEnabled = true;
+            this.CBlevel.Location = new System.Drawing.Point(273, 5);
+            this.CBlevel.Name = "CBlevel";
+            this.CBlevel.Size = new System.Drawing.Size(264, 21);
+            this.CBlevel.TabIndex = 5;
+            this.CBlevel.SelectedIndexChanged += new System.EventHandler(this.CBlevel_SelectedIndexChanged);
             // 
             // pictureBox5
             // 
@@ -256,8 +258,8 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.BTsave, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.BTcancel, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 138);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -267,39 +269,41 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(812, 134);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // button2
+            // BTsave
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(409, 32);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 69);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = false;
+            this.BTsave.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BTsave.BackColor = System.Drawing.Color.Transparent;
+            this.BTsave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTsave.BackgroundImage")));
+            this.BTsave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTsave.FlatAppearance.BorderSize = 0;
+            this.BTsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTsave.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTsave.Location = new System.Drawing.Point(409, 32);
+            this.BTsave.Name = "BTsave";
+            this.BTsave.Size = new System.Drawing.Size(93, 69);
+            this.BTsave.TabIndex = 5;
+            this.BTsave.Text = "Save";
+            this.BTsave.UseVisualStyleBackColor = false;
+            this.BTsave.Click += new System.EventHandler(this.BTsave_Click);
             // 
-            // button1
+            // BTcancel
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(310, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 69);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BTcancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BTcancel.BackColor = System.Drawing.Color.Transparent;
+            this.BTcancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTcancel.BackgroundImage")));
+            this.BTcancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTcancel.FlatAppearance.BorderSize = 0;
+            this.BTcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTcancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTcancel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTcancel.Location = new System.Drawing.Point(310, 32);
+            this.BTcancel.Name = "BTcancel";
+            this.BTcancel.Size = new System.Drawing.Size(93, 69);
+            this.BTcancel.TabIndex = 5;
+            this.BTcancel.Text = "Cancel";
+            this.BTcancel.UseVisualStyleBackColor = false;
+            this.BTcancel.Click += new System.EventHandler(this.BTcancel_Click);
             // 
             // FMedtabs
             // 
@@ -313,6 +317,7 @@
             this.Name = "FMedtabs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Minidil Information System";
+            this.Load += new System.EventHandler(this.FMedtabs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -335,18 +340,18 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DTP1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CBstudent;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBlesss;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox CBlevel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BTsave;
+        private System.Windows.Forms.Button BTcancel;
         private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

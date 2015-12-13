@@ -49,12 +49,18 @@ namespace MinidilInformationSystem
 
         private void BTshabsence_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            FMstdntshabs fm = new FMstdntshabs(mail);
+            fm.ShowDialog();
+            this.Close();
         }
 
         private void BTshexams_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            FMstudentnshexms fm = new FMstudentnshexms(mail);
+            fm.ShowDialog();
+            this.Close();
         }
 
         private void BTchangepass_Click(object sender, EventArgs e)

@@ -118,7 +118,7 @@ namespace MinidilInformationSystem
         private void BTedtabs_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FMedtabs fm = new FMedtabs();
+            FMedtabs fm = new FMedtabs(mail);
             fm.ShowDialog();
             this.Close();
         }
