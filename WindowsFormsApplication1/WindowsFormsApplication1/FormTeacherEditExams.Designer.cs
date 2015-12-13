@@ -60,27 +60,23 @@
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BTsave = new System.Windows.Forms.Button();
+            this.BTcancel = new System.Windows.Forms.Button();
+            this.BTdelete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.BTadd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.TBname = new System.Windows.Forms.TextBox();
+            this.CBlevel = new System.Windows.Forms.ComboBox();
+            this.CBlessonclasses = new System.Windows.Forms.ComboBox();
+            this.DTP1 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ExamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExamLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LesClassExam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGV1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel21.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -106,7 +102,7 @@
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -478,9 +474,9 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel10.Controls.Add(this.button1, 2, 0);
-            this.tableLayoutPanel10.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel10.Controls.Add(this.button3, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.BTsave, 2, 0);
+            this.tableLayoutPanel10.Controls.Add(this.BTcancel, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.BTdelete, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(601, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -489,56 +485,58 @@
             this.tableLayoutPanel10.Size = new System.Drawing.Size(194, 114);
             this.tableLayoutPanel10.TabIndex = 3;
             // 
-            // button1
+            // BTsave
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(131, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 69);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BTsave.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BTsave.BackColor = System.Drawing.Color.Transparent;
+            this.BTsave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTsave.BackgroundImage")));
+            this.BTsave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTsave.FlatAppearance.BorderSize = 0;
+            this.BTsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTsave.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTsave.Location = new System.Drawing.Point(131, 22);
+            this.BTsave.Name = "BTsave";
+            this.BTsave.Size = new System.Drawing.Size(60, 69);
+            this.BTsave.TabIndex = 6;
+            this.BTsave.Text = "Save";
+            this.BTsave.UseVisualStyleBackColor = false;
+            this.BTsave.Click += new System.EventHandler(this.BTsave_Click);
             // 
-            // button2
+            // BTcancel
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(67, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(58, 69);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = false;
+            this.BTcancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BTcancel.BackColor = System.Drawing.Color.Transparent;
+            this.BTcancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTcancel.BackgroundImage")));
+            this.BTcancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTcancel.FlatAppearance.BorderSize = 0;
+            this.BTcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTcancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTcancel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTcancel.Location = new System.Drawing.Point(67, 22);
+            this.BTcancel.Name = "BTcancel";
+            this.BTcancel.Size = new System.Drawing.Size(58, 69);
+            this.BTcancel.TabIndex = 6;
+            this.BTcancel.Text = "Cancel";
+            this.BTcancel.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // BTdelete
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(3, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(58, 69);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
+            this.BTdelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BTdelete.BackColor = System.Drawing.Color.Transparent;
+            this.BTdelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTdelete.BackgroundImage")));
+            this.BTdelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTdelete.FlatAppearance.BorderSize = 0;
+            this.BTdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTdelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTdelete.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTdelete.Location = new System.Drawing.Point(3, 22);
+            this.BTdelete.Name = "BTdelete";
+            this.BTdelete.Size = new System.Drawing.Size(58, 69);
+            this.BTdelete.TabIndex = 6;
+            this.BTdelete.Text = "Delete";
+            this.BTdelete.UseVisualStyleBackColor = false;
+            this.BTdelete.Click += new System.EventHandler(this.BTdelete_Click);
             // 
             // groupBox1
             // 
@@ -561,13 +559,13 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.92647F));
             this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.button4, 4, 1);
+            this.tableLayoutPanel8.Controls.Add(this.BTadd, 4, 1);
             this.tableLayoutPanel8.Controls.Add(this.label4, 2, 1);
             this.tableLayoutPanel8.Controls.Add(this.label5, 2, 0);
-            this.tableLayoutPanel8.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.comboBox1, 1, 1);
-            this.tableLayoutPanel8.Controls.Add(this.comboBox2, 3, 0);
-            this.tableLayoutPanel8.Controls.Add(this.dateTimePicker1, 3, 1);
+            this.tableLayoutPanel8.Controls.Add(this.TBname, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.CBlevel, 1, 1);
+            this.tableLayoutPanel8.Controls.Add(this.CBlessonclasses, 3, 0);
+            this.tableLayoutPanel8.Controls.Add(this.DTP1, 3, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -597,22 +595,23 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "(*) Level:";
             // 
-            // button4
+            // BTadd
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Location = new System.Drawing.Point(529, 50);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(54, 42);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = false;
+            this.BTadd.BackColor = System.Drawing.Color.Transparent;
+            this.BTadd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTadd.BackgroundImage")));
+            this.BTadd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTadd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BTadd.FlatAppearance.BorderSize = 0;
+            this.BTadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTadd.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTadd.Location = new System.Drawing.Point(529, 50);
+            this.BTadd.Name = "BTadd";
+            this.BTadd.Size = new System.Drawing.Size(54, 42);
+            this.BTadd.TabIndex = 6;
+            this.BTadd.Text = "Add";
+            this.BTadd.UseVisualStyleBackColor = false;
+            this.BTadd.Click += new System.EventHandler(this.BTadd_Click);
             // 
             // label4
             // 
@@ -634,39 +633,40 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "(*) Lesson / Class :";
             // 
-            // textBox1
+            // TBname
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(110, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 1;
+            this.TBname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBname.Location = new System.Drawing.Point(110, 13);
+            this.TBname.Name = "TBname";
+            this.TBname.Size = new System.Drawing.Size(150, 20);
+            this.TBname.TabIndex = 1;
             // 
-            // comboBox1
+            // CBlevel
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(110, 60);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 21);
-            this.comboBox1.TabIndex = 2;
+            this.CBlevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBlevel.FormattingEnabled = true;
+            this.CBlevel.Location = new System.Drawing.Point(110, 60);
+            this.CBlevel.Name = "CBlevel";
+            this.CBlevel.Size = new System.Drawing.Size(150, 21);
+            this.CBlevel.TabIndex = 2;
+            this.CBlevel.SelectedIndexChanged += new System.EventHandler(this.CBlevel_SelectedIndexChanged);
             // 
-            // comboBox2
+            // CBlessonclasses
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(373, 13);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(150, 21);
-            this.comboBox2.TabIndex = 3;
+            this.CBlessonclasses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBlessonclasses.FormattingEnabled = true;
+            this.CBlessonclasses.Location = new System.Drawing.Point(373, 13);
+            this.CBlessonclasses.Name = "CBlessonclasses";
+            this.CBlessonclasses.Size = new System.Drawing.Size(150, 21);
+            this.CBlessonclasses.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // DTP1
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(373, 61);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(150, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.DTP1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.DTP1.Location = new System.Drawing.Point(373, 61);
+            this.DTP1.Name = "DTP1";
+            this.DTP1.Size = new System.Drawing.Size(150, 20);
+            this.DTP1.TabIndex = 4;
             // 
             // tableLayoutPanel4
             // 
@@ -685,7 +685,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.DGV1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
@@ -694,46 +694,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Edit Existing Exams";
             // 
-            // dataGridView1
+            // DGV1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ExamName,
-            this.ExamLevel,
-            this.LesClassExam,
-            this.DateTime});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(786, 261);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.TabStop = false;
-            // 
-            // ExamName
-            // 
-            this.ExamName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ExamName.HeaderText = "Exam Name";
-            this.ExamName.Name = "ExamName";
-            // 
-            // ExamLevel
-            // 
-            this.ExamLevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ExamLevel.HeaderText = "Level";
-            this.ExamLevel.Name = "ExamLevel";
-            // 
-            // LesClassExam
-            // 
-            this.LesClassExam.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.LesClassExam.HeaderText = "Lesson / Class";
-            this.LesClassExam.Name = "LesClassExam";
-            // 
-            // DateTime
-            // 
-            this.DateTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DateTime.HeaderText = "Date / Time";
-            this.DateTime.Name = "DateTime";
+            this.DGV1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV1.Location = new System.Drawing.Point(3, 16);
+            this.DGV1.Name = "DGV1";
+            this.DGV1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV1.Size = new System.Drawing.Size(786, 261);
+            this.DGV1.TabIndex = 2;
+            this.DGV1.TabStop = false;
             // 
             // tabPage2
             // 
@@ -758,6 +729,7 @@
             this.Name = "FMedtexams";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Minidil Information System";
+            this.Load += new System.EventHandler(this.FMedtexams_Load);
             this.tableLayoutPanel21.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -784,7 +756,7 @@
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -812,20 +784,16 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExamName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExamLevel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LesClassExam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateTime;
+        private System.Windows.Forms.DataGridView DGV1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox TBname;
+        private System.Windows.Forms.ComboBox CBlevel;
+        private System.Windows.Forms.ComboBox CBlessonclasses;
+        private System.Windows.Forms.DateTimePicker DTP1;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -835,10 +803,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BTsave;
+        private System.Windows.Forms.Button BTcancel;
+        private System.Windows.Forms.Button BTdelete;
+        private System.Windows.Forms.Button BTadd;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

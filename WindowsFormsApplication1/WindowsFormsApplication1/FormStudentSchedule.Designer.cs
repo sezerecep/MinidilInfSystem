@@ -107,6 +107,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(812, 105);
             this.tableLayoutPanel3.TabIndex = 0;
+            
             // 
             // pictureBox1
             // 
