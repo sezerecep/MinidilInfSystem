@@ -98,32 +98,33 @@
             this.CBlesson = new System.Windows.Forms.ComboBox();
             this.BTremove = new System.Windows.Forms.Button();
             this.CLB1 = new System.Windows.Forms.CheckedListBox();
+            this.BTclear = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.BTedtselect = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.TBedttcin = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.BTedtsave = new System.Windows.Forms.Button();
+            this.BTedtcancel = new System.Windows.Forms.Button();
+            this.BTedtdelete = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.TBedtparname = new System.Windows.Forms.TextBox();
+            this.TBedtparmail = new System.Windows.Forms.TextBox();
+            this.TBedtallergies = new System.Windows.Forms.TextBox();
+            this.TBedtparsurname = new System.Windows.Forms.TextBox();
+            this.TBedtparmobile = new System.Windows.Forms.TextBox();
+            this.TBedtblood = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -142,16 +143,15 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.TBedtname = new System.Windows.Forms.TextBox();
+            this.DTP2 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.RBedtmal = new System.Windows.Forms.RadioButton();
+            this.RBedtfem = new System.Windows.Forms.RadioButton();
+            this.TBedtsurname = new System.Windows.Forms.TextBox();
+            this.TBedttc = new System.Windows.Forms.TextBox();
+            this.TBedtmail = new System.Windows.Forms.TextBox();
+            this.TBedtphone = new System.Windows.Forms.TextBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -159,18 +159,19 @@
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Btedtadd = new System.Windows.Forms.Button();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
             this.label31 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.CBedtlvl = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.label32 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.BTclear = new System.Windows.Forms.Button();
+            this.CBedtlesson = new System.Windows.Forms.ComboBox();
+            this.BTedtremove = new System.Windows.Forms.Button();
+            this.CLB2 = new System.Windows.Forms.CheckedListBox();
+            this.BTedtclear = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -549,11 +550,11 @@
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(332, 72);
+            this.label16.Location = new System.Drawing.Point(304, 72);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(80, 13);
+            this.label16.Size = new System.Drawing.Size(108, 13);
             this.label16.TabIndex = 0;
-            this.label16.Text = "(*) Blood Type :";
+            this.label16.Text = "(*) Blood Type (X(+)) :";
             // 
             // label15
             // 
@@ -1077,6 +1078,24 @@
             this.CLB1.Size = new System.Drawing.Size(303, 193);
             this.CLB1.TabIndex = 7;
             // 
+            // BTclear
+            // 
+            this.BTclear.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BTclear.BackColor = System.Drawing.Color.Transparent;
+            this.BTclear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTclear.BackgroundImage")));
+            this.BTclear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTclear.FlatAppearance.BorderSize = 0;
+            this.BTclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTclear.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTclear.Location = new System.Drawing.Point(312, 3);
+            this.BTclear.Name = "BTclear";
+            this.BTclear.Size = new System.Drawing.Size(56, 25);
+            this.BTclear.TabIndex = 6;
+            this.BTclear.Text = "Clear";
+            this.BTclear.UseVisualStyleBackColor = false;
+            this.BTclear.Click += new System.EventHandler(this.BTclear_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tableLayoutPanel5);
@@ -1149,9 +1168,9 @@
             this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel27.Controls.Add(this.button9, 2, 0);
+            this.tableLayoutPanel27.Controls.Add(this.BTedtselect, 2, 0);
             this.tableLayoutPanel27.Controls.Add(this.label17, 0, 0);
-            this.tableLayoutPanel27.Controls.Add(this.textBox23, 1, 0);
+            this.tableLayoutPanel27.Controls.Add(this.TBedttcin, 1, 0);
             this.tableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel27.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel27.Name = "tableLayoutPanel27";
@@ -1161,22 +1180,23 @@
             this.tableLayoutPanel27.Size = new System.Drawing.Size(390, 87);
             this.tableLayoutPanel27.TabIndex = 0;
             // 
-            // button9
+            // BTedtselect
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.BackColor = System.Drawing.Color.Transparent;
-            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button9.Location = new System.Drawing.Point(315, 31);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(72, 25);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Select";
-            this.button9.UseVisualStyleBackColor = false;
+            this.BTedtselect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTedtselect.BackColor = System.Drawing.Color.Transparent;
+            this.BTedtselect.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTedtselect.BackgroundImage")));
+            this.BTedtselect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTedtselect.FlatAppearance.BorderSize = 0;
+            this.BTedtselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTedtselect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTedtselect.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTedtselect.Location = new System.Drawing.Point(315, 31);
+            this.BTedtselect.Name = "BTedtselect";
+            this.BTedtselect.Size = new System.Drawing.Size(72, 25);
+            this.BTedtselect.TabIndex = 6;
+            this.BTedtselect.Text = "Select";
+            this.BTedtselect.UseVisualStyleBackColor = false;
+            this.BTedtselect.Click += new System.EventHandler(this.BTedtselect_Click);
             // 
             // label17
             // 
@@ -1189,13 +1209,13 @@
             this.label17.Text = "Please Enter TC Number :";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox23
+            // TBedttcin
             // 
-            this.textBox23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox23.Location = new System.Drawing.Point(159, 33);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(150, 20);
-            this.textBox23.TabIndex = 1;
+            this.TBedttcin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBedttcin.Location = new System.Drawing.Point(159, 33);
+            this.TBedttcin.Name = "TBedttcin";
+            this.TBedttcin.Size = new System.Drawing.Size(150, 20);
+            this.TBedttcin.TabIndex = 1;
             // 
             // tableLayoutPanel17
             // 
@@ -1234,9 +1254,9 @@
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel19.Controls.Add(this.button6, 2, 0);
-            this.tableLayoutPanel19.Controls.Add(this.button5, 1, 0);
-            this.tableLayoutPanel19.Controls.Add(this.button10, 0, 0);
+            this.tableLayoutPanel19.Controls.Add(this.BTedtsave, 2, 0);
+            this.tableLayoutPanel19.Controls.Add(this.BTedtcancel, 1, 0);
+            this.tableLayoutPanel19.Controls.Add(this.BTedtdelete, 0, 0);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel19.Location = new System.Drawing.Point(601, 3);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
@@ -1245,56 +1265,59 @@
             this.tableLayoutPanel19.Size = new System.Drawing.Size(194, 114);
             this.tableLayoutPanel19.TabIndex = 2;
             // 
-            // button6
+            // BTedtsave
             // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(131, 22);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(60, 69);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Save";
-            this.button6.UseVisualStyleBackColor = false;
+            this.BTedtsave.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BTedtsave.BackColor = System.Drawing.Color.Transparent;
+            this.BTedtsave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTedtsave.BackgroundImage")));
+            this.BTedtsave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTedtsave.FlatAppearance.BorderSize = 0;
+            this.BTedtsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTedtsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTedtsave.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTedtsave.Location = new System.Drawing.Point(131, 22);
+            this.BTedtsave.Name = "BTedtsave";
+            this.BTedtsave.Size = new System.Drawing.Size(60, 69);
+            this.BTedtsave.TabIndex = 6;
+            this.BTedtsave.Text = "Save";
+            this.BTedtsave.UseVisualStyleBackColor = false;
+            this.BTedtsave.Click += new System.EventHandler(this.BTedtsave_Click);
             // 
-            // button5
+            // BTedtcancel
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button5.Location = new System.Drawing.Point(67, 22);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(58, 69);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Cancel";
-            this.button5.UseVisualStyleBackColor = false;
+            this.BTedtcancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BTedtcancel.BackColor = System.Drawing.Color.Transparent;
+            this.BTedtcancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTedtcancel.BackgroundImage")));
+            this.BTedtcancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTedtcancel.FlatAppearance.BorderSize = 0;
+            this.BTedtcancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTedtcancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTedtcancel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTedtcancel.Location = new System.Drawing.Point(67, 22);
+            this.BTedtcancel.Name = "BTedtcancel";
+            this.BTedtcancel.Size = new System.Drawing.Size(58, 69);
+            this.BTedtcancel.TabIndex = 6;
+            this.BTedtcancel.Text = "Cancel";
+            this.BTedtcancel.UseVisualStyleBackColor = false;
+            this.BTedtcancel.Click += new System.EventHandler(this.BTedtcancel_Click);
             // 
-            // button10
+            // BTedtdelete
             // 
-            this.button10.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button10.BackColor = System.Drawing.Color.Transparent;
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button10.Location = new System.Drawing.Point(3, 22);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(58, 69);
-            this.button10.TabIndex = 6;
-            this.button10.Text = "Delete";
-            this.button10.UseVisualStyleBackColor = false;
+            this.BTedtdelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BTedtdelete.BackColor = System.Drawing.Color.Transparent;
+            this.BTedtdelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTedtdelete.BackgroundImage")));
+            this.BTedtdelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTedtdelete.FlatAppearance.BorderSize = 0;
+            this.BTedtdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTedtdelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTedtdelete.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTedtdelete.Location = new System.Drawing.Point(3, 22);
+            this.BTedtdelete.Name = "BTedtdelete";
+            this.BTedtdelete.Size = new System.Drawing.Size(58, 69);
+            this.BTedtdelete.TabIndex = 6;
+            this.BTedtdelete.Text = "Delete";
+            this.BTedtdelete.UseVisualStyleBackColor = false;
+            this.BTedtdelete.Click += new System.EventHandler(this.BTedtdelete_Click);
             // 
             // groupBox4
             // 
@@ -1319,12 +1342,12 @@
             this.tableLayoutPanel20.Controls.Add(this.label18, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.label19, 0, 1);
             this.tableLayoutPanel20.Controls.Add(this.label20, 0, 2);
-            this.tableLayoutPanel20.Controls.Add(this.textBox12, 1, 0);
-            this.tableLayoutPanel20.Controls.Add(this.textBox13, 1, 1);
-            this.tableLayoutPanel20.Controls.Add(this.textBox14, 1, 2);
-            this.tableLayoutPanel20.Controls.Add(this.textBox15, 4, 0);
-            this.tableLayoutPanel20.Controls.Add(this.textBox16, 4, 1);
-            this.tableLayoutPanel20.Controls.Add(this.textBox17, 4, 2);
+            this.tableLayoutPanel20.Controls.Add(this.TBedtparname, 1, 0);
+            this.tableLayoutPanel20.Controls.Add(this.TBedtparmail, 1, 1);
+            this.tableLayoutPanel20.Controls.Add(this.TBedtallergies, 1, 2);
+            this.tableLayoutPanel20.Controls.Add(this.TBedtparsurname, 4, 0);
+            this.tableLayoutPanel20.Controls.Add(this.TBedtparmobile, 4, 1);
+            this.tableLayoutPanel20.Controls.Add(this.TBedtblood, 4, 2);
             this.tableLayoutPanel20.Controls.Add(this.label21, 3, 2);
             this.tableLayoutPanel20.Controls.Add(this.label22, 3, 1);
             this.tableLayoutPanel20.Controls.Add(this.label23, 3, 0);
@@ -1374,63 +1397,63 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Allergies (x,x...):";
             // 
-            // textBox12
+            // TBedtparname
             // 
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox12.Location = new System.Drawing.Point(126, 5);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(117, 20);
-            this.textBox12.TabIndex = 1;
+            this.TBedtparname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBedtparname.Location = new System.Drawing.Point(126, 5);
+            this.TBedtparname.Name = "TBedtparname";
+            this.TBedtparname.Size = new System.Drawing.Size(117, 20);
+            this.TBedtparname.TabIndex = 1;
             // 
-            // textBox13
+            // TBedtparmail
             // 
-            this.textBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox13.Location = new System.Drawing.Point(126, 36);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(117, 20);
-            this.textBox13.TabIndex = 1;
+            this.TBedtparmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBedtparmail.Location = new System.Drawing.Point(126, 36);
+            this.TBedtparmail.Name = "TBedtparmail";
+            this.TBedtparmail.Size = new System.Drawing.Size(117, 20);
+            this.TBedtparmail.TabIndex = 1;
             // 
-            // textBox14
+            // TBedtallergies
             // 
-            this.textBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox14.Location = new System.Drawing.Point(126, 68);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(117, 20);
-            this.textBox14.TabIndex = 1;
+            this.TBedtallergies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBedtallergies.Location = new System.Drawing.Point(126, 68);
+            this.TBedtallergies.Name = "TBedtallergies";
+            this.TBedtallergies.Size = new System.Drawing.Size(117, 20);
+            this.TBedtallergies.TabIndex = 1;
             // 
-            // textBox15
+            // TBedtparsurname
             // 
-            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox15.Location = new System.Drawing.Point(418, 5);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(117, 20);
-            this.textBox15.TabIndex = 1;
+            this.TBedtparsurname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBedtparsurname.Location = new System.Drawing.Point(418, 5);
+            this.TBedtparsurname.Name = "TBedtparsurname";
+            this.TBedtparsurname.Size = new System.Drawing.Size(117, 20);
+            this.TBedtparsurname.TabIndex = 1;
             // 
-            // textBox16
+            // TBedtparmobile
             // 
-            this.textBox16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox16.Location = new System.Drawing.Point(418, 36);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(117, 20);
-            this.textBox16.TabIndex = 1;
+            this.TBedtparmobile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBedtparmobile.Location = new System.Drawing.Point(418, 36);
+            this.TBedtparmobile.Name = "TBedtparmobile";
+            this.TBedtparmobile.Size = new System.Drawing.Size(117, 20);
+            this.TBedtparmobile.TabIndex = 1;
             // 
-            // textBox17
+            // TBedtblood
             // 
-            this.textBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox17.Location = new System.Drawing.Point(418, 68);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(117, 20);
-            this.textBox17.TabIndex = 1;
+            this.TBedtblood.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBedtblood.Location = new System.Drawing.Point(418, 68);
+            this.TBedtblood.Name = "TBedtblood";
+            this.TBedtblood.Size = new System.Drawing.Size(117, 20);
+            this.TBedtblood.TabIndex = 1;
             // 
             // label21
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(345, 72);
+            this.label21.Location = new System.Drawing.Point(317, 72);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(67, 13);
+            this.label21.Size = new System.Drawing.Size(95, 13);
             this.label21.TabIndex = 0;
-            this.label21.Text = "Blood Type :";
+            this.label21.Text = "Blood Type (X(+)) :";
             // 
             // label22
             // 
@@ -1556,13 +1579,13 @@
             this.tableLayoutPanel22.Controls.Add(this.label27, 0, 3);
             this.tableLayoutPanel22.Controls.Add(this.label28, 0, 4);
             this.tableLayoutPanel22.Controls.Add(this.label29, 0, 5);
-            this.tableLayoutPanel22.Controls.Add(this.textBox18, 1, 0);
-            this.tableLayoutPanel22.Controls.Add(this.dateTimePicker2, 1, 4);
+            this.tableLayoutPanel22.Controls.Add(this.TBedtname, 1, 0);
+            this.tableLayoutPanel22.Controls.Add(this.DTP2, 1, 4);
             this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel23, 1, 5);
-            this.tableLayoutPanel22.Controls.Add(this.textBox19, 1, 1);
-            this.tableLayoutPanel22.Controls.Add(this.textBox20, 1, 2);
-            this.tableLayoutPanel22.Controls.Add(this.textBox21, 1, 3);
-            this.tableLayoutPanel22.Controls.Add(this.textBox22, 1, 6);
+            this.tableLayoutPanel22.Controls.Add(this.TBedtsurname, 1, 1);
+            this.tableLayoutPanel22.Controls.Add(this.TBedttc, 1, 2);
+            this.tableLayoutPanel22.Controls.Add(this.TBedtmail, 1, 3);
+            this.tableLayoutPanel22.Controls.Add(this.TBedtphone, 1, 6);
             this.tableLayoutPanel22.Controls.Add(this.pictureBox14, 2, 0);
             this.tableLayoutPanel22.Controls.Add(this.pictureBox15, 2, 6);
             this.tableLayoutPanel22.Controls.Add(this.pictureBox16, 2, 1);
@@ -1645,31 +1668,21 @@
             this.label29.TabIndex = 0;
             this.label29.Text = "Gender :";
             // 
-            // label30
+            // TBedtname
             // 
-            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(49, 235);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(44, 13);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "Phone :";
+            this.TBedtname.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TBedtname.Location = new System.Drawing.Point(99, 8);
+            this.TBedtname.Name = "TBedtname";
+            this.TBedtname.Size = new System.Drawing.Size(168, 20);
+            this.TBedtname.TabIndex = 1;
             // 
-            // textBox18
+            // DTP2
             // 
-            this.textBox18.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox18.Location = new System.Drawing.Point(99, 8);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(168, 20);
-            this.textBox18.TabIndex = 1;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dateTimePicker2.Location = new System.Drawing.Point(99, 156);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(168, 20);
-            this.dateTimePicker2.TabIndex = 5;
+            this.DTP2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.DTP2.Location = new System.Drawing.Point(99, 156);
+            this.DTP2.Name = "DTP2";
+            this.DTP2.Size = new System.Drawing.Size(168, 20);
+            this.DTP2.TabIndex = 5;
             // 
             // tableLayoutPanel23
             // 
@@ -1677,8 +1690,8 @@
             this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel23.Controls.Add(this.radioButton1, 0, 0);
-            this.tableLayoutPanel23.Controls.Add(this.radioButton2, 1, 0);
+            this.tableLayoutPanel23.Controls.Add(this.RBedtmal, 0, 0);
+            this.tableLayoutPanel23.Controls.Add(this.RBedtfem, 1, 0);
             this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel23.Location = new System.Drawing.Point(99, 188);
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
@@ -1687,61 +1700,61 @@
             this.tableLayoutPanel23.Size = new System.Drawing.Size(168, 31);
             this.tableLayoutPanel23.TabIndex = 6;
             // 
-            // radioButton1
+            // RBedtmal
             // 
-            this.radioButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(3, 7);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.RBedtmal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.RBedtmal.AutoSize = true;
+            this.RBedtmal.Location = new System.Drawing.Point(3, 7);
+            this.RBedtmal.Name = "RBedtmal";
+            this.RBedtmal.Size = new System.Drawing.Size(48, 17);
+            this.RBedtmal.TabIndex = 0;
+            this.RBedtmal.TabStop = true;
+            this.RBedtmal.Text = "Male";
+            this.RBedtmal.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // RBedtfem
             // 
-            this.radioButton2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(87, 7);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.RBedtfem.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.RBedtfem.AutoSize = true;
+            this.RBedtfem.Location = new System.Drawing.Point(87, 7);
+            this.RBedtfem.Name = "RBedtfem";
+            this.RBedtfem.Size = new System.Drawing.Size(59, 17);
+            this.RBedtfem.TabIndex = 1;
+            this.RBedtfem.TabStop = true;
+            this.RBedtfem.Text = "Female";
+            this.RBedtfem.UseVisualStyleBackColor = true;
             // 
-            // textBox19
+            // TBedtsurname
             // 
-            this.textBox19.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox19.Location = new System.Drawing.Point(99, 45);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(168, 20);
-            this.textBox19.TabIndex = 1;
+            this.TBedtsurname.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TBedtsurname.Location = new System.Drawing.Point(99, 45);
+            this.TBedtsurname.Name = "TBedtsurname";
+            this.TBedtsurname.Size = new System.Drawing.Size(168, 20);
+            this.TBedtsurname.TabIndex = 1;
             // 
-            // textBox20
+            // TBedttc
             // 
-            this.textBox20.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox20.Location = new System.Drawing.Point(99, 82);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(168, 20);
-            this.textBox20.TabIndex = 1;
+            this.TBedttc.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TBedttc.Location = new System.Drawing.Point(99, 82);
+            this.TBedttc.Name = "TBedttc";
+            this.TBedttc.Size = new System.Drawing.Size(168, 20);
+            this.TBedttc.TabIndex = 1;
             // 
-            // textBox21
+            // TBedtmail
             // 
-            this.textBox21.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox21.Location = new System.Drawing.Point(99, 119);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(168, 20);
-            this.textBox21.TabIndex = 1;
+            this.TBedtmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TBedtmail.Location = new System.Drawing.Point(99, 119);
+            this.TBedtmail.Name = "TBedtmail";
+            this.TBedtmail.Size = new System.Drawing.Size(168, 20);
+            this.TBedtmail.TabIndex = 1;
             // 
-            // textBox22
+            // TBedtphone
             // 
-            this.textBox22.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox22.Location = new System.Drawing.Point(99, 231);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(168, 20);
-            this.textBox22.TabIndex = 1;
+            this.TBedtphone.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TBedtphone.Location = new System.Drawing.Point(99, 231);
+            this.TBedtphone.Name = "TBedtphone";
+            this.TBedtphone.Size = new System.Drawing.Size(168, 20);
+            this.TBedtphone.TabIndex = 1;
             // 
             // pictureBox14
             // 
@@ -1820,6 +1833,16 @@
             this.pictureBox20.TabIndex = 16;
             this.pictureBox20.TabStop = false;
             // 
+            // label30
+            // 
+            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(49, 235);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(44, 13);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "Phone :";
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.tableLayoutPanel24);
@@ -1836,11 +1859,12 @@
             this.tableLayoutPanel24.ColumnCount = 2;
             this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel24.Controls.Add(this.button7, 1, 1);
+            this.tableLayoutPanel24.Controls.Add(this.Btedtadd, 1, 1);
             this.tableLayoutPanel24.Controls.Add(this.tableLayoutPanel25, 0, 0);
             this.tableLayoutPanel24.Controls.Add(this.tableLayoutPanel26, 0, 1);
-            this.tableLayoutPanel24.Controls.Add(this.button8, 1, 2);
-            this.tableLayoutPanel24.Controls.Add(this.checkedListBox2, 0, 2);
+            this.tableLayoutPanel24.Controls.Add(this.BTedtremove, 1, 2);
+            this.tableLayoutPanel24.Controls.Add(this.CLB2, 0, 2);
+            this.tableLayoutPanel24.Controls.Add(this.BTedtclear, 1, 0);
             this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel24.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel24.Name = "tableLayoutPanel24";
@@ -1851,22 +1875,23 @@
             this.tableLayoutPanel24.Size = new System.Drawing.Size(387, 261);
             this.tableLayoutPanel24.TabIndex = 0;
             // 
-            // button7
+            // Btedtadd
             // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button7.Location = new System.Drawing.Point(328, 34);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(56, 25);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Add";
-            this.button7.UseVisualStyleBackColor = false;
+            this.Btedtadd.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Btedtadd.BackColor = System.Drawing.Color.Transparent;
+            this.Btedtadd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btedtadd.BackgroundImage")));
+            this.Btedtadd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btedtadd.FlatAppearance.BorderSize = 0;
+            this.Btedtadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btedtadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Btedtadd.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Btedtadd.Location = new System.Drawing.Point(312, 34);
+            this.Btedtadd.Name = "Btedtadd";
+            this.Btedtadd.Size = new System.Drawing.Size(56, 25);
+            this.Btedtadd.TabIndex = 6;
+            this.Btedtadd.Text = "Add";
+            this.Btedtadd.UseVisualStyleBackColor = false;
+            this.Btedtadd.Click += new System.EventHandler(this.Btedtadd_Click);
             // 
             // tableLayoutPanel25
             // 
@@ -1874,7 +1899,7 @@
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel25.Controls.Add(this.label31, 0, 0);
-            this.tableLayoutPanel25.Controls.Add(this.comboBox3, 1, 0);
+            this.tableLayoutPanel25.Controls.Add(this.CBedtlvl, 1, 0);
             this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel25.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel25.Name = "tableLayoutPanel25";
@@ -1893,14 +1918,14 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "Level:";
             // 
-            // comboBox3
+            // CBedtlvl
             // 
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(63, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(237, 21);
-            this.comboBox3.TabIndex = 1;
+            this.CBedtlvl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CBedtlvl.FormattingEnabled = true;
+            this.CBedtlvl.Location = new System.Drawing.Point(63, 3);
+            this.CBedtlvl.Name = "CBedtlvl";
+            this.CBedtlvl.Size = new System.Drawing.Size(237, 21);
+            this.CBedtlvl.TabIndex = 1;
             // 
             // tableLayoutPanel26
             // 
@@ -1908,7 +1933,7 @@
             this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel26.Controls.Add(this.label32, 0, 0);
-            this.tableLayoutPanel26.Controls.Add(this.comboBox4, 1, 0);
+            this.tableLayoutPanel26.Controls.Add(this.CBedtlesson, 1, 0);
             this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel26.Location = new System.Drawing.Point(3, 34);
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
@@ -1927,58 +1952,58 @@
             this.label32.TabIndex = 0;
             this.label32.Text = "Lesson:";
             // 
-            // comboBox4
+            // CBedtlesson
             // 
-            this.comboBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(63, 3);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(237, 21);
-            this.comboBox4.TabIndex = 1;
+            this.CBedtlesson.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CBedtlesson.FormattingEnabled = true;
+            this.CBedtlesson.Location = new System.Drawing.Point(63, 3);
+            this.CBedtlesson.Name = "CBedtlesson";
+            this.CBedtlesson.Size = new System.Drawing.Size(237, 21);
+            this.CBedtlesson.TabIndex = 1;
             // 
-            // button8
+            // BTedtremove
             // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button8.Location = new System.Drawing.Point(320, 65);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(56, 25);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Remove";
-            this.button8.UseVisualStyleBackColor = false;
+            this.BTedtremove.BackColor = System.Drawing.Color.Transparent;
+            this.BTedtremove.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTedtremove.BackgroundImage")));
+            this.BTedtremove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTedtremove.FlatAppearance.BorderSize = 0;
+            this.BTedtremove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTedtremove.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTedtremove.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTedtremove.Location = new System.Drawing.Point(312, 65);
+            this.BTedtremove.Name = "BTedtremove";
+            this.BTedtremove.Size = new System.Drawing.Size(56, 25);
+            this.BTedtremove.TabIndex = 6;
+            this.BTedtremove.Text = "Remove";
+            this.BTedtremove.UseVisualStyleBackColor = false;
+            this.BTedtremove.Click += new System.EventHandler(this.BTedtremove_Click);
             // 
-            // checkedListBox2
+            // CLB2
             // 
-            this.checkedListBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(3, 65);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(303, 193);
-            this.checkedListBox2.TabIndex = 7;
+            this.CLB2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CLB2.FormattingEnabled = true;
+            this.CLB2.Location = new System.Drawing.Point(3, 65);
+            this.CLB2.Name = "CLB2";
+            this.CLB2.Size = new System.Drawing.Size(303, 193);
+            this.CLB2.TabIndex = 7;
             // 
-            // BTclear
+            // BTedtclear
             // 
-            this.BTclear.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BTclear.BackColor = System.Drawing.Color.Transparent;
-            this.BTclear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTclear.BackgroundImage")));
-            this.BTclear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BTclear.FlatAppearance.BorderSize = 0;
-            this.BTclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BTclear.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BTclear.Location = new System.Drawing.Point(312, 3);
-            this.BTclear.Name = "BTclear";
-            this.BTclear.Size = new System.Drawing.Size(56, 25);
-            this.BTclear.TabIndex = 6;
-            this.BTclear.Text = "Clear";
-            this.BTclear.UseVisualStyleBackColor = false;
-            this.BTclear.Click += new System.EventHandler(this.BTclear_Click);
+            this.BTedtclear.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BTedtclear.BackColor = System.Drawing.Color.Transparent;
+            this.BTedtclear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTedtclear.BackgroundImage")));
+            this.BTedtclear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTedtclear.FlatAppearance.BorderSize = 0;
+            this.BTedtclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTedtclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTedtclear.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTedtclear.Location = new System.Drawing.Point(312, 3);
+            this.BTedtclear.Name = "BTedtclear";
+            this.BTedtclear.Size = new System.Drawing.Size(56, 25);
+            this.BTedtclear.TabIndex = 6;
+            this.BTedtclear.Text = "Clear";
+            this.BTedtclear.UseVisualStyleBackColor = false;
+            this.BTedtclear.Click += new System.EventHandler(this.BTedtclear_Click);
             // 
             // FMcrtedtstudent
             // 
@@ -2138,7 +2163,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox TBedttcin;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -2146,20 +2171,20 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button Btedtadd;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox CBedtlvl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.ComboBox CBedtlesson;
+        private System.Windows.Forms.Button BTedtremove;
+        private System.Windows.Forms.CheckedListBox CLB2;
+        private System.Windows.Forms.Button BTedtselect;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button BTedtsave;
+        private System.Windows.Forms.Button BTedtcancel;
+        private System.Windows.Forms.Button BTedtdelete;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -2175,12 +2200,12 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox TBedtparname;
+        private System.Windows.Forms.TextBox TBedtparmail;
+        private System.Windows.Forms.TextBox TBedtallergies;
+        private System.Windows.Forms.TextBox TBedtparsurname;
+        private System.Windows.Forms.TextBox TBedtparmobile;
+        private System.Windows.Forms.TextBox TBedtblood;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -2196,15 +2221,15 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox TBedtname;
+        private System.Windows.Forms.DateTimePicker DTP2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.RadioButton RBedtmal;
+        private System.Windows.Forms.RadioButton RBedtfem;
+        private System.Windows.Forms.TextBox TBedtsurname;
+        private System.Windows.Forms.TextBox TBedttc;
+        private System.Windows.Forms.TextBox TBedtmail;
+        private System.Windows.Forms.TextBox TBedtphone;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox16;
@@ -2217,5 +2242,6 @@
         private System.Windows.Forms.PictureBox pictureBox28;
         private System.Windows.Forms.PictureBox pictureBox27;
         private System.Windows.Forms.Button BTclear;
+        private System.Windows.Forms.Button BTedtclear;
     }
 }

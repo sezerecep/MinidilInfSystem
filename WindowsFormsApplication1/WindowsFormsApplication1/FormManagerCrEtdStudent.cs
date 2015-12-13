@@ -13,6 +13,7 @@ namespace MinidilInformationSystem
     public partial class FMcrtedtstudent : System.Windows.Forms.Form
     {
         string mail;
+        CheckedListBox oldless=new CheckedListBox();
         public FMcrtedtstudent(string loggedmail)
         {
             mail = loggedmail;
@@ -151,6 +152,273 @@ namespace MinidilInformationSystem
         private void BTremove_Click(object sender, EventArgs e)
         {
             CLB1.CheckedItems.OfType<string>().ToList().ForEach(CLB1.Items.Remove);
+        }
+
+        private void BTedtcancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FMyonetici fm = new FMyonetici(mail);
+            fm.ShowDialog();
+            this.Close();
+        }
+
+        private void BTedtselect_Click(object sender, EventArgs e)
+        {
+            if (TBedttcin.Text == "")
+            {
+                MessageBox.Show("Please Enter The TC Number of User To Edit", "Parameters Missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DatabaseConnection con = new DatabaseConnection();
+                DataTable tab = new DataTable();
+                tab = con.ReturningQuery("CALL pass_tc (" + TBedttcin.Text + ");");
+                if (tab.TableName == "Connected but Empty")
+                {
+                    MessageBox.Show("Wrong TC, Please Try Again", "Select Attempt Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (tab.TableName == "I am Empty")
+                {
+                    MessageBox.Show("Database Connection Failed", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getname_tc (" + TBedttcin.Text + ");");
+                    TBedtname.Text = tab.Rows[0].ItemArray[0].ToString();
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getsurname_tc (" + TBedttcin.Text + ");");
+                    TBedtsurname.Text = tab.Rows[0].ItemArray[0].ToString();
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getemail_tc (" + TBedttcin.Text + ");");
+                    TBedtmail.Text = tab.Rows[0].ItemArray[0].ToString();
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getphone_tc (" + TBedttcin.Text + ");");
+                    TBedtphone.Text = tab.Rows[0].ItemArray[0].ToString();
+                    tab.Clear();
+                    TBedttc.Text = TBedttcin.Text;
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getdateofbirth_tc (" + TBedttcin.Text + ");");
+                    DTP2.Value = Convert.ToDateTime(tab.Rows[0].ItemArray[0].ToString()).Date;
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getgender_tc (" + TBedttcin.Text + ");");
+                    if (tab.Rows[0].ItemArray[0].ToString() == "m")
+                    {
+                        RBedtmal.Checked = true;
+                        RBedtfem.Checked = false;
+                    }
+                    else
+                    {
+                        RBedtfem.Checked = true;
+                        RBedtmal.Checked = false;
+                    }
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getparentname_tc (" + TBedttcin.Text + ");");
+                    TBedtparname.Text = tab.Rows[0].ItemArray[0].ToString();
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getparentsurname_tc (" + TBedttcin.Text + ");");
+                    TBedtparsurname.Text = tab.Rows[0].ItemArray[0].ToString();
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getparentemail_tc (" + TBedttcin.Text + ");");
+                    TBedtparmail.Text = tab.Rows[0].ItemArray[0].ToString();
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getparentphone_tc (" + TBedttcin.Text + ");");
+                    TBedtparmobile.Text = tab.Rows[0].ItemArray[0].ToString();
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getallergy_tc (" + TBedttcin.Text + ");");
+                    TBedtallergies.Text = tab.Rows[0].ItemArray[0].ToString();
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getbloodtype_tc (" + TBedttcin.Text + ");");
+                    TBedtblood.Text = tab.Rows[0].ItemArray[0].ToString();
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getstudentlevel_tc(" + TBedttcin.Text + "); ");
+                    CBedtlvl.Text= tab.Rows[0].ItemArray[0].ToString();
+                    CBedtlvl.Enabled = false;
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getlessonsandclasses ('" + CBedtlvl.Text + "');");
+                        foreach (DataRow rw in tab.Rows)
+                        {
+                            CBedtlesson.Items.Add(rw[0].ToString() + " " + rw[1].ToString());
+                        }
+                    tab.Clear();
+                    tab = con.ReturningQuery("CALL getstudentlessonsandclasses (" + TBedttcin.Text + ");");
+                   foreach (DataRow rw in tab.Rows)
+                        {
+                            CLB2.Items.Add(rw[0].ToString() + " " + rw[1].ToString());
+                            oldless.Items.Add(rw[0].ToString() + " " + rw[1].ToString());
+                        }
+                    
+                }
+                con.closeConnection();
+            }
+        }
+
+        private void BTedtclear_Click(object sender, EventArgs e)
+        {
+            CBedtlvl.Enabled = true;
+            CLB2.Items.Clear();
+            CBedtlesson.Items.Clear();
+            CBedtlesson.Text = "";
+        }
+
+        private void Btedtadd_Click(object sender, EventArgs e)
+        {
+            CLB2.Items.Add(CBedtlesson.SelectedItem.ToString());
+        }
+
+        private void BTedtremove_Click(object sender, EventArgs e)
+        {
+            CLB2.CheckedItems.OfType<string>().ToList().ForEach(CLB2.Items.Remove);
+        }
+
+        private void BTedtdelete_Click(object sender, EventArgs e)
+        {
+            DialogResult res;
+            res = MessageBox.Show("Are You Sure to Delete ?", "Deleting from Database", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                DatabaseConnection con = new DatabaseConnection();
+                if (con.is_Connected())
+                {
+                    bool ret = con.NonReturnQuery("UPDATE users SET email='-*-<->-r-d-',deleted_at='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  WHERE tc=" + TBedttcin.Text + ";");
+                    if (ret)
+                    {
+                        MessageBox.Show("Entry Succesfully Deleted", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string mmail = null;
+                        DataTable tab;
+                        tab = con.ReturningQuery("CALL getemail_tc (" + TBedttcin.Text + ");");
+                        mmail = tab.Rows[0].ItemArray[0].ToString();
+                        if (mail == mmail)
+                        {
+                            con.NonReturnQuery("UPDATE users SET email='-*-<->-r-d-' WHERE email='" + mmail + "';");
+                            this.Hide();
+                            FMlogin fm1 = new FMlogin();
+                            fm1.ShowDialog();
+                            this.Close();
+
+                        }
+                        else
+                        {
+                            this.Hide();
+                            FMyonetici fm = new FMyonetici(mail);
+                            fm.ShowDialog();
+                            this.Close();
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Entry Cannot Be Deleted", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                this.Hide();
+                FMyonetici fm = new FMyonetici(mail);
+                fm.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void BTedtsave_Click(object sender, EventArgs e)
+        {
+
+            DialogResult res;
+            res = MessageBox.Show("Are You Sure to Save Your Changes ?", "Saving to Database", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
+            {
+                DatabaseConnection con = new DatabaseConnection();
+                if (con.is_Connected())
+                {
+                    if (TBedtmail.Text != "" && TBedtname.Text != "" && TBedtphone.Text != "" && TBedtparname.Text != "" && TBedtblood.Text != "" && TBedtparsurname.Text != "" && TBedtsurname.Text != "" && CBedtlvl.Text != "" && TBedtparmail.Text != "" && TBedtparmobile.Text != "" && TBedttc.Text != "")
+                    {
+                        bool suc;
+                        bool suc1;
+                        bool suc3;
+                        bool suc4;
+                        if (RBedtfem.Checked)
+                        {
+                            suc = con.NonReturnQuery("UPDATE users SET tc=" + TBedttc.Text + ",name_of_user='"
+                                 + TBedtname.Text + "',surname='" + TBedtsurname.Text + "',email='"
+                                 + TBedtmail.Text + "',date_of_birth='" + DTP2.Value.Date.ToString("yyyy-MM-dd HH:mm:ss")
+                                 + "',phone='" + TBedtphone.Text + "',gender='f',reset_pass_question='What is your parent name?',reset_pass_answer='" 
+                                 + TBedtparname.Text + "',updated_at='"
+                                 + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE tc='" + TBedttcin.Text + "'");
+                            suc1 = con.NonReturnQuery("UPDATE students SET level_name='" + CBedtlvl.Text + "',parent_name='"
+                                + TBedtparname.Text + "',parent_surname='" + TBedtparsurname.Text + "',parent_phone='" + TBedtparmobile.Text + "',parent_email='"
+                                + TBedtparmail.Text + "',allergy='" + TBedtallergies.Text + "',blood_type='" + TBedtblood.Text + "' WHERE student_tc='" + TBedttc.Text + "'");
+                            
+                        }
+                        else
+                        {
+                            suc = con.NonReturnQuery("UPDATE users SET tc=" + TBedttc.Text + ",name_of_user='"
+                                 + TBedtname.Text + "',surname='" + TBedtsurname.Text + "',email='"
+                                 + TBedtmail.Text + "',date_of_birth='" + DTP2.Value.Date.ToString("yyyy-MM-dd HH:mm:ss")
+                                 + "',phone='" + TBedtphone.Text + "',gender='m',reset_pass_question='What is your parent name?',reset_pass_answer='"
+                                 + TBedtparname.Text + "',updated_at='"
+                                 + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE tc='" + TBedttcin.Text + "'");
+                            suc1 = con.NonReturnQuery("UPDATE students SET level_name='" + CBedtlvl.Text + "',parent_name='"
+                                + TBedtparname.Text + "',parent_surname='" + TBedtparsurname.Text + "',parent_phone='" + TBedtparmobile.Text + "',parent_email='"
+                                + TBedtparmail.Text + "',allergy='" + TBedtallergies.Text + "',blood_type='" + TBedtblood.Text + "' WHERE student_tc='" + TBedttc.Text + "'");
+                        }
+                        for (int i = 0; i < CLB2.Items.Count; i++)
+                        {
+                            if (oldless.Items.Contains(CLB2.Items[i]))
+                            {
+                                //do nothing
+                            }
+                            else
+                            {
+                                string[] bol = CLB2.Items[i].ToString().Split(' ');
+                                suc3 = con.NonReturnQuery("INSERT INTO students_lessons_classes VALUES(" + TBedttc.Text + ",'" + bol[1] + "','" + bol[0] + "','" + CBedtlvl.Text + "');");
+                            }
+                        }
+                        for (int i = 0; i < oldless.Items.Count; i++)
+                        {
+                            if (CLB2.Items.Contains(oldless.Items[i]))
+                            {
+                                //do nothing
+                            }
+                            else
+                            {
+                                string[] bol = oldless.Items[i].ToString().Split(' ');
+                                suc4 = con.NonReturnQuery("DELETE FROM students_lessons_classes WHERE (student_tc=" + TBedttc.Text + " AND class_name='" + bol[1] + "' AND lesson_name='" + bol[0] + "' AND level_name='" + CBedtlvl.Text + "');");
+                            }
+                        }
+                        if (suc&&suc1)
+                        {
+                            
+                            DialogResult res1;
+                            res1 = MessageBox.Show("Changes Saved Successfully", "Changes Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (res1 == DialogResult.OK)
+                            {
+                                this.Hide();
+                                FMyonetici fm = new FMyonetici(mail);
+                                fm.ShowDialog();
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Changes Cannot Saved", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Do Not Leave any Sections Empty", "Not Enough Data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                con.closeConnection();
+            }
+            else
+            {
+                this.Hide();
+                FMyonetici fm = new FMyonetici(mail);
+                fm.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

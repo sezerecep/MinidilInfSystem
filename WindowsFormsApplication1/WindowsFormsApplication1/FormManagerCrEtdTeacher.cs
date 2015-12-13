@@ -41,7 +41,7 @@ namespace MinidilInformationSystem
                                                                                                 + "','" + TBresetpass.Text + "','" + TBresansw.Text
                                                                                                 + "',NULL,NULL,'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                                                                                                 + "',NULL,NULL,'Teacher');");
-                            suc1 = con.NonReturnQuery("INSERT INTO  VALUES(" + TBtc.Text + ");");
+                            suc1 = con.NonReturnQuery("INSERT INTO teachers VALUES(" + TBtc.Text + ");");
                         }
                         else
                         {
@@ -170,6 +170,7 @@ namespace MinidilInformationSystem
                     if (TBedtmail.Text != "" && TBeditpassrst.Text != "" && TBedtphone.Text != "" && TBeditsurname.Text != "" && TBedttc.Text != "" && TBedtname.Text != "" && TBedtpassque.Text != "")
                     {
                         bool suc;
+                        bool suc1;
                         if (RBedtfem.Checked)
                         {
                             suc = con.NonReturnQuery("UPDATE users SET tc=" + TBedttc.Text + ",name_of_user='"
@@ -178,6 +179,7 @@ namespace MinidilInformationSystem
                                  + "',phone='" + TBedtphone.Text + "',gender='f',reset_pass_question='"
                                  + TBedtpassque.Text + "',reset_pass_answer='" + TBeditpassrst.Text + "',updated_at='"
                                  + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE tc='" + TBtcin.Text + "'");
+                            suc1 = con.NonReturnQuery("UPDATE teachers SET skills='"+TBedtskills.Text + "' WHERE teacher_tc="+TBedttc.Text+";");
                         }
                         else
                         {
@@ -187,8 +189,9 @@ namespace MinidilInformationSystem
                                 + "',phone='" + TBedtphone.Text + "',gender='m',reset_pass_question='"
                                 + TBedtpassque.Text + "',reset_pass_answer='" + TBeditpassrst.Text + "',updated_at='"
                                 + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE tc='" + TBtcin.Text + "'");
+                            suc1 = con.NonReturnQuery("UPDATE teachers SET skills='" + TBedtskills.Text + "' WHERE teacher_tc=" + TBedttc.Text + ";");
                         }
-                        if (suc)
+                        if (suc&&suc1)
                         {
                             DialogResult res1;
                             res1 = MessageBox.Show("Changes Saved Successfully", "Changes Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
