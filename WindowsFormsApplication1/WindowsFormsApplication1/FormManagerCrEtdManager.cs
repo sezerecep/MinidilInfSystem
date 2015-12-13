@@ -169,11 +169,7 @@ namespace MinidilInformationSystem
                     bool ret = con.NonReturnQuery("UPDATE users SET email='-*-<->-r-d-',deleted_at='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  WHERE tc=" + TBtcin.Text + ";");
                     if (ret)
                     {
-                        
-                            DialogResult res1;
-                        res1 = MessageBox.Show("Entry Succesfully Deleted", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (res1 == DialogResult.OK)
-                        {
+                        MessageBox.Show("Entry Succesfully Deleted", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             string mmail = null;
                             DataTable tab;
                             tab = con.ReturningQuery("CALL getemail_tc (" + TBtcin.Text + ");");
@@ -194,7 +190,7 @@ namespace MinidilInformationSystem
                                 fm.ShowDialog();
                                 this.Close();
                             }
-                        }
+                        
                     }
                     else
                     {

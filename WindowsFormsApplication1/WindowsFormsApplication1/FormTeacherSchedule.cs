@@ -12,24 +12,35 @@ namespace MinidilInformationSystem
 {
     public partial class FMschdleteacher : Form
     {
-        public FMschdleteacher()
+        string mail;
+        public FMschdleteacher(string logged)
         {
             InitializeComponent();
+            mail = logged;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void BTback_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            FMteacher fm = new FMteacher(mail);
+            fm.ShowDialog();
+            this.Close();
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void FMschdleteacher_Load(object sender, EventArgs e)
         {
+            DatabaseConnection con = new DatabaseConnection();
+            if (con.is_Connected())
+            {
+                DataTable tab = con.ReturningQuery("CALL tcfromemail ('" + mail + "')");
+                DataTable tab1 = con.ReturningQuery("CALL getschedulesofteacher (" + tab.Rows[0].ItemArray[0].ToString() + ");");
+                tab1.Columns[0].ColumnName = "Day";
+                tab1.Columns[1].ColumnName = "Time";
+                tab1.Columns[2].ColumnName = "Lesson";
+                tab1.Columns[3].ColumnName = "Class";
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+                DGV1.DataSource = tab1;
+            }
         }
     }
 }

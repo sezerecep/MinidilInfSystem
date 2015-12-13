@@ -12,28 +12,40 @@ namespace MinidilInformationSystem
 {
     public partial class FMteacher : System.Windows.Forms.Form
     {
+        string mail;
         public FMteacher(string loggedusermail)
         {
             InitializeComponent();
+            mail = loggedusermail;
         }
 
         private void FMteacher_Load(object sender, EventArgs e)
         {
             DatabaseConnection con = new DatabaseConnection();
-            if (con.is_Connected())
-            {
-                //Tc ye göre kullanıcı ismi getirilip aşağıdaki değişkene atılacak
-                string loggedusername = null;
-                this.label2.Text = loggedusername;
-            }
-            else
-            {
-                MessageBox.Show("Connection to Database Failed", "Connection Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Hide();
-                FMlogin fm = new FMlogin();
-                fm.ShowDialog();
-                this.Close();
-            }
+                if (con.is_Connected())
+                {
+                    DataTable tab = con.ReturningQuery("CALL getname ('" + mail + "')");
+                    LBname.Text = tab.Rows[0].ItemArray[0].ToString();
+                }
+                con.closeConnection();
+            
+          
+        }
+
+        private void BTlogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FMlogin fm = new FMlogin();
+            fm.ShowDialog();
+            this.Close();
+        }
+
+        private void BTshschedule_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FMschdleteacher fm = new FMschdleteacher(mail);
+            fm.ShowDialog();
+            this.Close();
         }
     }
 }

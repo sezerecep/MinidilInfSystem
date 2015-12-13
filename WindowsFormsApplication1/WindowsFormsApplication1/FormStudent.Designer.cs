@@ -35,15 +35,15 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.BTlogout = new System.Windows.Forms.Button();
+            this.LBname = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BTchangepass = new System.Windows.Forms.Button();
+            this.BTshexams = new System.Windows.Forms.Button();
+            this.BTshabsence = new System.Windows.Forms.Button();
+            this.BTshschedule = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -133,8 +133,8 @@
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.button7, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.BTlogout, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.LBname, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(201, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -144,31 +144,32 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(193, 122);
             this.tableLayoutPanel6.TabIndex = 2;
             // 
-            // button7
+            // BTlogout
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(152, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(38, 46);
-            this.button7.TabIndex = 2;
-            this.button7.UseVisualStyleBackColor = false;
+            this.BTlogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTlogout.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTlogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTlogout.BackgroundImage")));
+            this.BTlogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTlogout.FlatAppearance.BorderSize = 0;
+            this.BTlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTlogout.Image = ((System.Drawing.Image)(resources.GetObject("BTlogout.Image")));
+            this.BTlogout.Location = new System.Drawing.Point(152, 3);
+            this.BTlogout.Name = "BTlogout";
+            this.BTlogout.Size = new System.Drawing.Size(38, 46);
+            this.BTlogout.TabIndex = 2;
+            this.BTlogout.UseVisualStyleBackColor = false;
+            this.BTlogout.Click += new System.EventHandler(this.BTlogout_Click);
             // 
-            // label2
+            // LBname
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(3, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "label2";
+            this.LBname.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LBname.AutoSize = true;
+            this.LBname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LBname.Location = new System.Drawing.Point(3, 53);
+            this.LBname.Name = "LBname";
+            this.LBname.Size = new System.Drawing.Size(51, 16);
+            this.LBname.TabIndex = 0;
+            this.LBname.Text = "label2";
             // 
             // label1
             // 
@@ -197,10 +198,10 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.button4, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.button2, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.button3, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.BTchangepass, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.BTshexams, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.BTshabsence, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.BTshschedule, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 283);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -211,73 +212,77 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(818, 275);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
-            // button4
+            // BTchangepass
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(130, 42);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 53);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Change My Password";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.BTchangepass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BTchangepass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTchangepass.BackgroundImage")));
+            this.BTchangepass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTchangepass.FlatAppearance.BorderSize = 0;
+            this.BTchangepass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTchangepass.Image = ((System.Drawing.Image)(resources.GetObject("BTchangepass.Image")));
+            this.BTchangepass.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTchangepass.Location = new System.Drawing.Point(130, 42);
+            this.BTchangepass.Name = "BTchangepass";
+            this.BTchangepass.Size = new System.Drawing.Size(148, 53);
+            this.BTchangepass.TabIndex = 4;
+            this.BTchangepass.Text = "Change My Password";
+            this.BTchangepass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BTchangepass.UseVisualStyleBackColor = true;
+            this.BTchangepass.Click += new System.EventHandler(this.BTchangepass_Click);
             // 
-            // button1
+            // BTshexams
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(539, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 53);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Show My Exams";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.BTshexams.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BTshexams.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTshexams.BackgroundImage")));
+            this.BTshexams.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTshexams.FlatAppearance.BorderSize = 0;
+            this.BTshexams.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTshexams.Image = ((System.Drawing.Image)(resources.GetObject("BTshexams.Image")));
+            this.BTshexams.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTshexams.Location = new System.Drawing.Point(539, 42);
+            this.BTshexams.Name = "BTshexams";
+            this.BTshexams.Size = new System.Drawing.Size(148, 53);
+            this.BTshexams.TabIndex = 4;
+            this.BTshexams.Text = "Show My Exams";
+            this.BTshexams.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BTshexams.UseVisualStyleBackColor = true;
+            this.BTshexams.Click += new System.EventHandler(this.BTshexams_Click);
             // 
-            // button2
+            // BTshabsence
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(539, 179);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 53);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Show My Absence";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.BTshabsence.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BTshabsence.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTshabsence.BackgroundImage")));
+            this.BTshabsence.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTshabsence.FlatAppearance.BorderSize = 0;
+            this.BTshabsence.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTshabsence.Image = ((System.Drawing.Image)(resources.GetObject("BTshabsence.Image")));
+            this.BTshabsence.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTshabsence.Location = new System.Drawing.Point(539, 179);
+            this.BTshabsence.Name = "BTshabsence";
+            this.BTshabsence.Size = new System.Drawing.Size(148, 53);
+            this.BTshabsence.TabIndex = 4;
+            this.BTshabsence.Text = "Show My Absence";
+            this.BTshabsence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BTshabsence.UseVisualStyleBackColor = true;
+            this.BTshabsence.Click += new System.EventHandler(this.BTshabsence_Click);
             // 
-            // button3
+            // BTshschedule
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(130, 179);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 53);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Show My Schedule";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.BTshschedule.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BTshschedule.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTshschedule.BackgroundImage")));
+            this.BTshschedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTshschedule.FlatAppearance.BorderSize = 0;
+            this.BTshschedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTshschedule.Image = ((System.Drawing.Image)(resources.GetObject("BTshschedule.Image")));
+            this.BTshschedule.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTshschedule.Location = new System.Drawing.Point(130, 179);
+            this.BTshschedule.Name = "BTshschedule";
+            this.BTshschedule.Size = new System.Drawing.Size(148, 53);
+            this.BTshschedule.TabIndex = 4;
+            this.BTshschedule.Text = "Show My Schedule";
+            this.BTshschedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BTshschedule.UseVisualStyleBackColor = true;
+            this.BTshschedule.Click += new System.EventHandler(this.BTshschedule_Click);
             // 
             // FMstudent
             // 
@@ -291,7 +296,7 @@
             this.Name = "FMstudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Minidil Information System";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.FMstudent_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -315,13 +320,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BTchangepass;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LBname;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button BTshexams;
+        private System.Windows.Forms.Button BTshabsence;
+        private System.Windows.Forms.Button BTshschedule;
+        private System.Windows.Forms.Button BTlogout;
     }
 }

@@ -72,7 +72,7 @@ namespace MinidilInformationSystem
             }
             else if (RBstudent.Checked)
             {
-                FMcrtedtstudent fm = new FMcrtedtstudent();
+                FMcrtedtstudent fm = new FMcrtedtstudent(mail);
                 fm.ShowDialog();
                 this.Close();
             }

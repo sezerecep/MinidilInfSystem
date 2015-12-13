@@ -12,36 +12,52 @@ namespace MinidilInformationSystem
 {
     public partial class FMstudent : System.Windows.Forms.Form
     {
+        string mail;
         public FMstudent(string loggedusermail)
         {
             InitializeComponent();
+            mail = loggedusermail;
         }
-        private void Form2_Load(object sender, EventArgs e)
+
+        private void FMstudent_Load(object sender, EventArgs e)
         {
             DatabaseConnection con = new DatabaseConnection();
             if (con.is_Connected())
             {
-                //Tc ye göre kullanıcı ismi getirilip aşağıdaki değişkene atılacak
-                string loggedusername = null;
-                this.label2.Text = loggedusername;
+                DataTable tab = con.ReturningQuery("CALL getname ('" + mail + "')");
+                LBname.Text = tab.Rows[0].ItemArray[0].ToString();
             }
-            else
-            {
-                MessageBox.Show("Connection to Database Failed", "Connection Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Hide();
-                FMlogin fm = new FMlogin();
-                fm.ShowDialog();
-                this.Close();
-            }
+            con.closeConnection();
+        
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void BTlogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FMlogin fm = new FMlogin();
+            fm.ShowDialog();
+            this.Close();
+        }
+
+        private void BTshschedule_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FMscdlestudent fm = new FMscdlestudent(mail);
+            fm.ShowDialog();
+            this.Close();
+        }
+
+        private void BTshabsence_Click(object sender, EventArgs e)
         {
 
         }
 
-        
+        private void BTshexams_Click(object sender, EventArgs e)
+        {
 
-        private void label3_Click(object sender, EventArgs e)
+        }
+
+        private void BTchangepass_Click(object sender, EventArgs e)
         {
 
         }
