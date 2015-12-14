@@ -680,9 +680,11 @@
             // 
             this.TBtc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TBtc.Location = new System.Drawing.Point(199, 82);
+            this.TBtc.MaxLength = 11;
             this.TBtc.Name = "TBtc";
             this.TBtc.Size = new System.Drawing.Size(347, 20);
             this.TBtc.TabIndex = 1;
+            this.TBtc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBtc_KeyPress);
             // 
             // TBmail
             // 
@@ -696,9 +698,11 @@
             // 
             this.TBphone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TBphone.Location = new System.Drawing.Point(199, 231);
+            this.TBphone.MaxLength = 11;
             this.TBphone.Name = "TBphone";
             this.TBphone.Size = new System.Drawing.Size(347, 20);
             this.TBphone.TabIndex = 1;
+            this.TBphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBtc_KeyPress);
             // 
             // pictureBox3
             // 
@@ -894,9 +898,11 @@
             // 
             this.TBtcin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TBtcin.Location = new System.Drawing.Point(159, 33);
+            this.TBtcin.MaxLength = 11;
             this.TBtcin.Name = "TBtcin";
             this.TBtcin.Size = new System.Drawing.Size(150, 20);
             this.TBtcin.TabIndex = 1;
+            this.TBtcin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBtc_KeyPress);
             // 
             // tableLayoutPanel17
             // 
@@ -1327,9 +1333,11 @@
             // 
             this.TBedttc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TBedttc.Location = new System.Drawing.Point(199, 82);
+            this.TBedttc.MaxLength = 11;
             this.TBedttc.Name = "TBedttc";
             this.TBedttc.Size = new System.Drawing.Size(347, 20);
             this.TBedttc.TabIndex = 1;
+            this.TBedttc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBtc_KeyPress);
             // 
             // TBedtmail
             // 
@@ -1343,9 +1351,11 @@
             // 
             this.TBedtphone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TBedtphone.Location = new System.Drawing.Point(199, 231);
+            this.TBedtphone.MaxLength = 11;
             this.TBedtphone.Name = "TBedtphone";
             this.TBedtphone.Size = new System.Drawing.Size(347, 20);
             this.TBedtphone.TabIndex = 1;
+            this.TBedtphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBtc_KeyPress);
             // 
             // pictureBox14
             // 

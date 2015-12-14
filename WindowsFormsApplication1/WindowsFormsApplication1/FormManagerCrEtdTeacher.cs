@@ -243,6 +243,7 @@ namespace MinidilInformationSystem
                 if (con.is_Connected())
                 {
                     bool ret = con.NonReturnQuery("UPDATE users SET password_of_user='-*-<->-r-d-',deleted_at='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  WHERE tc=" + TBtcin.Text + ";");
+                    bool ret2 = con.NonReturnQuery("DELETE FROM teachers WHERE teacher_tc=," + TBtcin.Text + ";");
                     if (ret)
                     {
 
@@ -285,6 +286,11 @@ namespace MinidilInformationSystem
                 fm.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void TBtc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

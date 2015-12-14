@@ -599,9 +599,11 @@
             // 
             this.TBtc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TBtc.Location = new System.Drawing.Point(199, 82);
+            this.TBtc.MaxLength = 11;
             this.TBtc.Name = "TBtc";
             this.TBtc.Size = new System.Drawing.Size(190, 20);
             this.TBtc.TabIndex = 1;
+            this.TBtc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBtc_KeyPress);
             // 
             // TBmail
             // 
@@ -615,9 +617,11 @@
             // 
             this.TBphone.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TBphone.Location = new System.Drawing.Point(199, 231);
+            this.TBphone.MaxLength = 11;
             this.TBphone.Name = "TBphone";
             this.TBphone.Size = new System.Drawing.Size(190, 20);
             this.TBphone.TabIndex = 1;
+            this.TBphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBtc_KeyPress);
             // 
             // tableLayoutPanel14
             // 
@@ -853,9 +857,11 @@
             // 
             this.TBtcin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TBtcin.Location = new System.Drawing.Point(159, 33);
+            this.TBtcin.MaxLength = 11;
             this.TBtcin.Name = "TBtcin";
             this.TBtcin.Size = new System.Drawing.Size(150, 20);
             this.TBtcin.TabIndex = 1;
+            this.TBtcin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBtc_KeyPress);
             // 
             // tableLayoutPanel17
             // 
@@ -1213,9 +1219,11 @@
             // 
             this.TBedittc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TBedittc.Location = new System.Drawing.Point(199, 82);
+            this.TBedittc.MaxLength = 11;
             this.TBedittc.Name = "TBedittc";
             this.TBedittc.Size = new System.Drawing.Size(190, 20);
             this.TBedittc.TabIndex = 1;
+            this.TBedittc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBedittc_KeyPress);
             // 
             // TBeditmail
             // 
@@ -1229,9 +1237,11 @@
             // 
             this.TBeditphone.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TBeditphone.Location = new System.Drawing.Point(199, 231);
+            this.TBeditphone.MaxLength = 11;
             this.TBeditphone.Name = "TBeditphone";
             this.TBeditphone.Size = new System.Drawing.Size(190, 20);
             this.TBeditphone.TabIndex = 1;
+            this.TBeditphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBeditphone_KeyPress);
             // 
             // tableLayoutPanel12
             // 
