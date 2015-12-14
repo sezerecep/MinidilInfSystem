@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -287,7 +288,29 @@ namespace MinidilInformationSystem
                                 suc1 = con.NonReturnQuery("UPDATE students_exams SET exam_grade="+dgvr.Cells[2].Value.ToString()+ " WHERE student_tc=" + rw.ItemArray[0].ToString() +" AND exam_name='"+ DGVexams.SelectedRows[0].Cells[0].Value.ToString() + "';");
                             }
                         }
-                        
+                        DataTable mails_to_send = con.ReturningQuery("SELECT * FROM grade_mails");
+                        if(mails_to_send.TableName!="Connected but Empty")
+                        {
+                            foreach (DataRow rw1 in mails_to_send.Rows)
+                            {
+                                SmtpClient client = new SmtpClient();
+                                client.Port = 587;
+                                client.Host = "smtp.gmail.com";
+                                client.EnableSsl = true;
+                                client.Timeout = 10000;
+                                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                                client.UseDefaultCredentials = false;
+                                client.Credentials = new System.Net.NetworkCredential("minidilinfosystem@gmail.com", "minidil15241524");
+
+                                MailMessage mm = new MailMessage("minidilinfosystem@gmail.com", rw1.ItemArray[0].ToString(), "Sınav Notu", "Sayın Velimiz, " + rw1.ItemArray[1].ToString() +
+                                    " TC kimlik numarasına sahip öğrencimiz " + rw1.ItemArray[2].ToString() + " sınavından " + rw1.ItemArray[3].ToString() + " almıştır, Bilgilerinize...");
+                                mm.BodyEncoding = UTF8Encoding.UTF8;
+                                mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+
+                                client.Send(mm);
+                            }
+                            con.NonReturnQuery("SET SQL_SAFE_UPDATES = 0; DELETE FROM grade_mails; SET SQL_SAFE_UPDATES = 1;");
+                        }
                     }
                     if(suc1)
                     {
