@@ -41,7 +41,7 @@ namespace MinidilInformationSystem
                                                                                                 + "','" + TBresetpass.Text + "','" + TBresansw.Text
                                                                                                 + "',NULL,NULL,'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                                                                                                 + "',NULL,NULL,'Teacher');");
-                            suc1 = con.NonReturnQuery("INSERT INTO teachers VALUES(" + TBtc.Text + ");");
+                            suc1 = con.NonReturnQuery("INSERT INTO teachers VALUES(" + TBtc.Text + ",'" + TBskills.Text + "',0);");
                         }
                         else
                         {
