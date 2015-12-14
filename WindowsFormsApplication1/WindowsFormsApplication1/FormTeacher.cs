@@ -55,5 +55,21 @@ namespace MinidilInformationSystem
             fm.ShowDialog();
             this.Close();
         }
+
+        private void BTsshlessstudent_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FMteacherswless fm = new FMteacherswless(mail);
+            fm.ShowDialog();
+            this.Close();
+        }
+
+        private void BTchngpass_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FMresetpass fm = new FMresetpass(mail);
+            fm.ShowDialog();
+            this.Close();
+        }
     }
 }

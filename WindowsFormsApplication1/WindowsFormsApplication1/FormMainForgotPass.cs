@@ -39,34 +39,49 @@ namespace MinidilInformationSystem
                 }
                 else
                 {
-                   
-
-                    // E mailin kontrolü yapılacak
-
-                    //Burada veritabanınadan e maile göre reset sorusu ve cevabı çekilecek question ve answera yazılacak
-
-                    label2.Text = question;
-                    label1.Text = "Answer :";
-                    pictureBox2.Hide();
-
-
+                    DataTable retTab = new DataTable();
+                    retTab = con.ReturningQuery("CALL getpassresetquestion('" + TBemail.Text + "');");
+                    email = TBemail.Text;
+                    if (retTab.TableName == "Connected but Empty")
+                    {
+                        MessageBox.Show("Wrong E-Mail,Password Combination, Please Try Again", "Login Attempt Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (retTab.TableName == "I am Empty")
+                    {
+                        MessageBox.Show("Database Connection Failed", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        label2.Text = retTab.Rows[0].ItemArray[0].ToString();
+                        label1.Text = "Answer :";
+                        pictureBox2.Hide();
+                    }
                 }
             }
             else
             {
-                //Burada sorunun cevabı kontrol edilecek
-                //if (Cevap doğru)
-                
-                this.Hide();
-                FMresetpass fm = new FMresetpass(email);
-                fm.ShowDialog();
-                this.Close();
-                //else 
-               // MessageBox.Show("Password Reset Answer is Wrong", "Forgot PAssword Attempt Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DataTable retTab = new DataTable();
+                retTab = con.ReturningQuery("CALL getpassresetanswer('" + email + "');");
+                if (TBemail.Text == "")
+                {
+                    MessageBox.Show("Please Enter Your Answer", "Forgot Password Attempt Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if(TBemail.Text==retTab.Rows[0].ItemArray[0].ToString())
+                    {
+                        this.Hide();
+                        FMresetpass form2 = new FMresetpass(email);
+                        form2.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wrong Answer, Please Try Again", "Login Attempt Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             con.closeConnection();
         }
-
-        
     }
 }

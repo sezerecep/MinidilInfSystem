@@ -228,6 +228,7 @@
             this.BTchngpass.Text = "Change My Password";
             this.BTchngpass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTchngpass.UseVisualStyleBackColor = true;
+            this.BTchngpass.Click += new System.EventHandler(this.BTchngpass_Click);
             // 
             // BTedtexms
             // 
@@ -263,6 +264,7 @@
             this.BTsshlessstudent.Text = "Show Lesson / Student";
             this.BTsshlessstudent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTsshlessstudent.UseVisualStyleBackColor = true;
+            this.BTsshlessstudent.Click += new System.EventHandler(this.BTsshlessstudent_Click);
             // 
             // BTshschedule
             // 

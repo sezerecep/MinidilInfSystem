@@ -144,8 +144,9 @@ namespace MinidilInformationSystem
                         {
 
                             ret = con.NonReturnQuery("UPDATE exams SET exam_name='" + DGV1.Rows[i].Cells[0].Value.ToString() + "',lesson_name='" + DGV1.Rows[i].Cells[1].Value.ToString()
-                               + "',class_name='" + DGV1.Rows[i].Cells[2].Value.ToString() +"',updated_at="+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',exam_date_time='" 
-                               + Convert.ToDateTime(DGV1.Rows[i].Cells[3].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE (exam_name='" + NDGV.Rows[i].ItemArray[0].ToString() +"');");
+                               + "',class_name='" + DGV1.Rows[i].Cells[2].Value.ToString() +"',updated_at='"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',exam_date_time='" 
+                               + Convert.ToDateTime(DGV1.Rows[i].Cells[3].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss") +"' "
+                               +"WHERE exam_name='" + NDGV.Rows[i].ItemArray[0].ToString() +"';");
                         }
                         
                         if (ret)
@@ -168,44 +169,49 @@ namespace MinidilInformationSystem
 
         private void BTdelete_Click(object sender, EventArgs e)
         {
-            DataTable tab2 = new DataTable();
-            DataColumn[] dcs = new DataColumn[] { };
-            foreach (DataGridViewColumn c in DGV1.Columns)
+            DialogResult res;
+            res = MessageBox.Show("Are You Sure to Delete ?", "Deleting from Database", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (res == DialogResult.OK)
             {
-                DataColumn dc = new DataColumn();
-                dc.ColumnName = c.Name;
-                dc.DataType = c.ValueType;
-                tab2.Columns.Add(dc);
-            }
-            foreach (DataGridViewRow r in DGV1.SelectedRows)
-            {
-                DataRow drow = tab2.NewRow();
-                foreach (DataGridViewCell cell in r.Cells)
+                DataTable tab2 = new DataTable();
+                DataColumn[] dcs = new DataColumn[] { };
+                foreach (DataGridViewColumn c in DGV1.Columns)
                 {
-                    drow[cell.OwningColumn.Name] = cell.Value;
+                    DataColumn dc = new DataColumn();
+                    dc.ColumnName = c.Name;
+                    dc.DataType = c.ValueType;
+                    tab2.Columns.Add(dc);
                 }
-                tab2.Rows.Add(drow);
-            }
+                foreach (DataGridViewRow r in DGV1.SelectedRows)
+                {
+                    DataRow drow = tab2.NewRow();
+                    foreach (DataGridViewCell cell in r.Cells)
+                    {
+                        drow[cell.OwningColumn.Name] = cell.Value;
+                    }
+                    tab2.Rows.Add(drow);
+                }
 
-            DatabaseConnection con = new DatabaseConnection();
-            if (con.is_Connected())
-            {
-                bool suc=false;
-                foreach(DataRow dtRow in tab2.Rows)
+                DatabaseConnection con = new DatabaseConnection();
+                if (con.is_Connected())
                 {
-                    suc = con.NonReturnQuery("DELETE FROM exams WHERE(exam_name='" + dtRow.ItemArray[0].ToString()+"');"); 
-                }
-                if (suc)
-                {
-                    MessageBox.Show("Entry Succesfully Deleted", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                    FMteacher fm = new FMteacher(mail);
-                    fm.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Entry Cannot Be Deleted", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    bool suc = false;
+                    foreach (DataRow dtRow in tab2.Rows)
+                    {
+                        suc = con.NonReturnQuery("DELETE FROM exams WHERE(exam_name='" + dtRow.ItemArray[0].ToString() + "');");
+                    }
+                    if (suc)
+                    {
+                        MessageBox.Show("Entry Succesfully Deleted", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
+                        FMedtexams fm = new FMedtexams(mail);
+                        fm.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Entry Cannot Be Deleted", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -237,6 +243,12 @@ namespace MinidilInformationSystem
             {
                 DataTable tab;
                 tab = con.ReturningQuery("CALL getstudentsofexams('" + tab2.Rows[index].ItemArray[0].ToString() + "');");
+                if (tab.TableName != "Connected but Empty")
+                {
+                    tab.Columns[0].ColumnName = "Name";
+                    tab.Columns[1].ColumnName = "Surname";
+                    tab.Columns[2].ColumnName = "Grade";
+                }
                 DGVstudent.DataSource = tab;
                 if (tab.TableName != "Connected but Empty")
                 {

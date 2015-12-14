@@ -12,9 +12,11 @@ namespace MinidilInformationSystem
 {
     public partial class FMresetpass : System.Windows.Forms.Form
     {
+        string mail;
         public FMresetpass(string email)
         {
             InitializeComponent();
+            mail = email;
         }
 
        
@@ -29,24 +31,31 @@ namespace MinidilInformationSystem
                 MessageBox.Show("Passwords Do Not Match, Please Try Again", "Password Reset Attempt Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                
-                // yeni passwordun veritabanına kaydı yapılacak
+
+                bool ret = con.NonReturnQuery("UPDATE users SET password_of_user='" + TBnewfirst.Text + "' WHERE email='" + mail + "';");
                 con.closeConnection();
                 DialogResult res;
-                res = MessageBox.Show("Your New Password Succcesfully Saved", "Password Reset Attempt Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
-                if (res == System.Windows.Forms.DialogResult.OK)
+                if (ret)
                 {
-                    this.Hide();
-                    FMlogin form = new FMlogin();
-                    form.ShowDialog();
-                    this.Close();
+                    res = MessageBox.Show("Your New Password Succcesfully Saved", "Password Reset Attempt Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (res == DialogResult.OK)
+                    {
+                        this.Hide();
+                        FMlogin form = new FMlogin();
+                        form.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Hide();
+                        FMlogin form = new FMlogin();
+                        form.ShowDialog();
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    this.Hide();
-                    FMlogin form = new FMlogin();
-                    form.ShowDialog();
-                    this.Close();
+                    MessageBox.Show("Can Not Save New Password", "Password Reset Attempt Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

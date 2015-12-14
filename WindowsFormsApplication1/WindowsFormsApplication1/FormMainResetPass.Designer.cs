@@ -135,6 +135,7 @@
             this.TBnewsecond.Name = "TBnewsecond";
             this.TBnewsecond.Size = new System.Drawing.Size(264, 20);
             this.TBnewsecond.TabIndex = 0;
+            this.TBnewsecond.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -153,6 +154,7 @@
             this.TBnewfirst.Name = "TBnewfirst";
             this.TBnewfirst.Size = new System.Drawing.Size(264, 20);
             this.TBnewfirst.TabIndex = 0;
+            this.TBnewfirst.UseSystemPasswordChar = true;
             // 
             // label4
             // 

@@ -34,17 +34,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.BTback = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.col_teach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_lvl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_less = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_class = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_noteavg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGV1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel3
@@ -94,7 +89,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.BTback, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.DGV1, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 143);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -119,52 +114,23 @@
             this.BTback.TabIndex = 8;
             this.BTback.Text = "Back";
             this.BTback.UseVisualStyleBackColor = false;
+            this.BTback.Click += new System.EventHandler(this.BTback_Click);
             // 
-            // dataGridView1
+            // DGV1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_teach,
-            this.col_lvl,
-            this.col_less,
-            this.col_class,
-            this.col_noteavg});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(812, 284);
-            this.dataGridView1.TabIndex = 9;
-            // 
-            // col_teach
-            // 
-            this.col_teach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_teach.HeaderText = "Teacher";
-            this.col_teach.Name = "col_teach";
-            // 
-            // col_lvl
-            // 
-            this.col_lvl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_lvl.HeaderText = "Level";
-            this.col_lvl.Name = "col_lvl";
-            // 
-            // col_less
-            // 
-            this.col_less.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_less.HeaderText = "Lesson";
-            this.col_less.Name = "col_less";
-            // 
-            // col_class
-            // 
-            this.col_class.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_class.HeaderText = "Class";
-            this.col_class.Name = "col_class";
-            // 
-            // col_noteavg
-            // 
-            this.col_noteavg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_noteavg.HeaderText = "Average Note";
-            this.col_noteavg.Name = "col_noteavg";
+            this.DGV1.AllowUserToAddRows = false;
+            this.DGV1.AllowUserToDeleteRows = false;
+            this.DGV1.AllowUserToResizeColumns = false;
+            this.DGV1.AllowUserToResizeRows = false;
+            this.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.DGV1.Location = new System.Drawing.Point(3, 3);
+            this.DGV1.Name = "DGV1";
+            this.DGV1.Size = new System.Drawing.Size(812, 284);
+            this.DGV1.TabIndex = 9;
             // 
             // FMreport
             // 
@@ -182,7 +148,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,11 +159,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button BTback;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_teach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_lvl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_less;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_class;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_noteavg;
+        private System.Windows.Forms.DataGridView DGV1;
     }
 }

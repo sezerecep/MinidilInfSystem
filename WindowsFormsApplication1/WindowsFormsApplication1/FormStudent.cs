@@ -65,7 +65,10 @@ namespace MinidilInformationSystem
 
         private void BTchangepass_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            FMresetpass fm = new FMresetpass(mail);
+            fm.ShowDialog();
+            this.Close();
         }
     }
 }

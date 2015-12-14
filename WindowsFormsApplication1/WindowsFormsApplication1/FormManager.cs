@@ -126,7 +126,7 @@ namespace MinidilInformationSystem
         private void BTrptnot_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FMreport fm = new FMreport("Average Note");
+            FMreport fm = new FMreport("Average Note",mail);
             fm.ShowDialog();
             this.Close();
         }
@@ -134,7 +134,7 @@ namespace MinidilInformationSystem
         private void BTrprtabs_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FMreport fm = new FMreport("Average Absence");
+            FMreport fm = new FMreport("Average Absence",mail);
             fm.ShowDialog();
             this.Close();
         }

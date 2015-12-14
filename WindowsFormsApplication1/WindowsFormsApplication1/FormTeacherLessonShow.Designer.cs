@@ -35,19 +35,12 @@
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.BTback = new System.Windows.Forms.Button();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVstudent = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGVlessons = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -55,9 +48,9 @@
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVstudent)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVlessons)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel5
@@ -135,7 +128,7 @@
             this.tableLayoutPanel18.ColumnCount = 1;
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel18.Controls.Add(this.button6, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.BTback, 0, 0);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 313);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
@@ -144,22 +137,23 @@
             this.tableLayoutPanel18.Size = new System.Drawing.Size(812, 127);
             this.tableLayoutPanel18.TabIndex = 1;
             // 
-            // button6
+            // BTback
             // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(353, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(106, 77);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Back";
-            this.button6.UseVisualStyleBackColor = false;
+            this.BTback.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BTback.BackColor = System.Drawing.Color.Transparent;
+            this.BTback.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTback.BackgroundImage")));
+            this.BTback.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTback.FlatAppearance.BorderSize = 0;
+            this.BTback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTback.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTback.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTback.Location = new System.Drawing.Point(353, 3);
+            this.BTback.Name = "BTback";
+            this.BTback.Size = new System.Drawing.Size(106, 77);
+            this.BTback.TabIndex = 7;
+            this.BTback.Text = "Back";
+            this.BTback.UseVisualStyleBackColor = false;
+            this.BTback.Click += new System.EventHandler(this.BTback_Click);
             // 
             // tableLayoutPanel21
             // 
@@ -178,7 +172,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.dataGridView3);
+            this.groupBox5.Controls.Add(this.DGVstudent);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(530, 3);
             this.groupBox5.Name = "groupBox5";
@@ -187,35 +181,26 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Students List";
             // 
-            // dataGridView3
+            // DGVstudent
             // 
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(273, 279);
-            this.dataGridView3.TabIndex = 2;
-            this.dataGridView3.TabStop = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Surname";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.DGVstudent.AllowUserToAddRows = false;
+            this.DGVstudent.AllowUserToDeleteRows = false;
+            this.DGVstudent.AllowUserToResizeColumns = false;
+            this.DGVstudent.AllowUserToResizeRows = false;
+            this.DGVstudent.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DGVstudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVstudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVstudent.Location = new System.Drawing.Point(3, 16);
+            this.DGVstudent.MultiSelect = false;
+            this.DGVstudent.Name = "DGVstudent";
+            this.DGVstudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVstudent.Size = new System.Drawing.Size(273, 279);
+            this.DGVstudent.TabIndex = 2;
+            this.DGVstudent.TabStop = false;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView2);
+            this.groupBox3.Controls.Add(this.DGVlessons);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
@@ -224,51 +209,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lessons List";
             // 
-            // dataGridView2
+            // DGVlessons
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.Time});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(515, 279);
-            this.dataGridView2.TabIndex = 2;
-            this.dataGridView2.TabStop = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Level";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Lesson";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Class";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Day";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // Time
-            // 
-            this.Time.HeaderText = "Time";
-            this.Time.Name = "Time";
+            this.DGVlessons.AllowUserToAddRows = false;
+            this.DGVlessons.AllowUserToDeleteRows = false;
+            this.DGVlessons.AllowUserToResizeColumns = false;
+            this.DGVlessons.AllowUserToResizeRows = false;
+            this.DGVlessons.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVlessons.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DGVlessons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVlessons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVlessons.Location = new System.Drawing.Point(3, 16);
+            this.DGVlessons.MultiSelect = false;
+            this.DGVlessons.Name = "DGVlessons";
+            this.DGVlessons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVlessons.Size = new System.Drawing.Size(515, 279);
+            this.DGVlessons.TabIndex = 2;
+            this.DGVlessons.TabStop = false;
+            this.DGVlessons.SelectionChanged += new System.EventHandler(this.DGVlessons_SelectionChanged);
             // 
             // FMteacherswless
             // 
@@ -282,6 +240,7 @@
             this.Name = "FMteacherswless";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Minidil Information System";
+            this.Load += new System.EventHandler(this.FMteacherswless_Load);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -289,9 +248,9 @@
             this.tableLayoutPanel18.ResumeLayout(false);
             this.tableLayoutPanel21.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVstudent)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVlessons)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,16 +265,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridView DGVstudent;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridView DGVlessons;
+        private System.Windows.Forms.Button BTback;
     }
 }

@@ -13,9 +13,11 @@ namespace MinidilInformationSystem
     public partial class FMreport : Form
     {
         string com;
-        public FMreport(string comes)
+        string mail;
+        public FMreport(string comes,string logged)
         {
             com = comes;
+            mail = logged;
             InitializeComponent();
         }
 
@@ -23,14 +25,41 @@ namespace MinidilInformationSystem
         {
             if(com== "Average Note")
             {
-                col_noteavg.HeaderText = com;
-                //veritabanı çekimi
+                DatabaseConnection con = new DatabaseConnection();
+                DataTable tab = con.ReturningQuery("SELECT * FROM reportaverageexam");
+                if (tab.TableName != "Connected but Empty")
+                {
+                    tab.Columns[0].ColumnName = "Teacher Name";
+                    tab.Columns[1].ColumnName = "Teacher Surname";
+                    tab.Columns[2].ColumnName = "Exam";
+                    tab.Columns[3].ColumnName = "Lesson";
+                    tab.Columns[4].ColumnName = "Class";
+                    tab.Columns[5].ColumnName = "Average Grade";
+                }
+                DGV1.DataSource = tab;
             }
             else
             {
-                //veritabanı çekimi
-                col_noteavg.HeaderText = com;
+                DatabaseConnection con = new DatabaseConnection();
+                DataTable tab = con.ReturningQuery("SELECT * FROM reportcountabsence");
+                if (tab.TableName != "Connected but Empty")
+                {
+                    tab.Columns[0].ColumnName = "Teacher Name";
+                    tab.Columns[1].ColumnName = "Teacher Surname";
+                    tab.Columns[2].ColumnName = "Lesson";
+                    tab.Columns[3].ColumnName = "Class";
+                    tab.Columns[4].ColumnName = "Absence Count";
+                }
+                DGV1.DataSource = tab;
             }
+        }
+
+        private void BTback_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FMyonetici fm = new FMyonetici(mail);
+            fm.ShowDialog();
+            this.Close();
         }
     }
 }
