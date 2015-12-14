@@ -242,7 +242,7 @@ namespace MinidilInformationSystem
                 DatabaseConnection con = new DatabaseConnection();
                 if (con.is_Connected())
                 {
-                    bool ret = con.NonReturnQuery("UPDATE users SET email='-*-<->-r-d-',deleted_at='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  WHERE tc=" + TBtcin.Text + ";");
+                    bool ret = con.NonReturnQuery("UPDATE users SET password_of_user='-*-<->-r-d-',deleted_at='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  WHERE tc=" + TBtcin.Text + ";");
                     if (ret)
                     {
 
@@ -256,7 +256,7 @@ namespace MinidilInformationSystem
                             mmail = tab.Rows[0].ItemArray[0].ToString();
                             if (mail == mmail)
                             {
-                                con.NonReturnQuery("UPDATE users SET email='-*-<->-r-d-' WHERE email='" + mmail + "';");
+                                con.NonReturnQuery("UPDATE users SET password_of_user='-*-<->-r-d-' WHERE email='" + mmail + "';");
                                 this.Hide();
                                 FMlogin fm1 = new FMlogin();
                                 fm1.ShowDialog();

@@ -34,7 +34,7 @@ namespace MinidilInformationSystem
                     CBlevel.Items.Add(rw[0].ToString());
                 }
                 tab.Clear();
-                tab = con.ReturningQuery("SELECT name_of_user,surname FROM users WHERE (permissions='Teacher' AND email<>'-*-<->-r-d-');");
+                tab = con.ReturningQuery("SELECT name_of_user,surname FROM users WHERE (permissions='Teacher' AND password_of_user<>'-*-<->-r-d-');");
                 foreach (DataRow rw in tab.Rows)
                 {
                     CBteacher.Items.Add(rw[0].ToString() + " " + rw[1].ToString());
@@ -220,7 +220,7 @@ namespace MinidilInformationSystem
                     {
 
                         DataTable tab = con.ReturningQuery("SELECT class_name FROM classes");
-                        DataTable tab1 = con.ReturningQuery("SELECT name_of_user,surname FROM users WHERE (permissions='Teacher' AND email<>'-*-<->-r-d-');");
+                        DataTable tab1 = con.ReturningQuery("SELECT name_of_user,surname FROM users WHERE (permissions='Teacher' AND password_of_user<>'-*-<->-r-d-');");
                         
                         if (true)
                         {
