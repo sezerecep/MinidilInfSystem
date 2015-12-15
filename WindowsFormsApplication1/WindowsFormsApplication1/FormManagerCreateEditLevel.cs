@@ -143,22 +143,25 @@ namespace MinidilInformationSystem
                 DatabaseConnection con = new DatabaseConnection();
                 if(con.is_Connected())
                 {
-                    bool ret = con.NonReturnQuery("DELETE FROM levels WHERE level_name='" + CBlevels.SelectedItem.ToString() + "'");
-                    if (ret)
+                    if (CBlevels.Text != "")
                     {
-                        DialogResult res1;
-                        res1 = MessageBox.Show("Entry Succesfully Deleted", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        if (res1 == DialogResult.OK)
+                        bool ret = con.NonReturnQuery("DELETE FROM levels WHERE level_name='" + CBlevels.SelectedItem.ToString() + "'");
+                        if (ret)
                         {
-                            this.Hide();
-                            FMyonetici fm = new FMyonetici(mail);
-                            fm.ShowDialog();
-                            this.Close();
+                            DialogResult res1;
+                            res1 = MessageBox.Show("Entry Succesfully Deleted", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (res1 == DialogResult.OK)
+                            {
+                                this.Hide();
+                                FMyonetici fm = new FMyonetici(mail);
+                                fm.ShowDialog();
+                                this.Close();
+                            }
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Entry Cannot Be Deleted", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
+                        {
+                            MessageBox.Show("Entry Cannot Be Deleted", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 

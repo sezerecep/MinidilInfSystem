@@ -154,18 +154,21 @@ namespace MinidilInformationSystem
                 DatabaseConnection con = new DatabaseConnection();
                 if (con.is_Connected())
                 {
-                    bool ret = con.NonReturnQuery("DELETE FROM classes WHERE class_name='" + CBclasses.SelectedItem.ToString() + "';");
-                    if (ret)
+                    if (CBclasses.Text != "")
                     {
-                        MessageBox.Show("Deletion Successfully Completed", "Deletion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Hide();
-                        FMyonetici fm = new FMyonetici(mail);
-                        fm.ShowDialog();
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Entry Cannot Be Deleted", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        bool ret = con.NonReturnQuery("DELETE FROM classes WHERE class_name='" + CBclasses.SelectedItem.ToString() + "';");
+                        if (ret)
+                        {
+                            MessageBox.Show("Deletion Successfully Completed", "Deletion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                            FMyonetici fm = new FMyonetici(mail);
+                            fm.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Entry Cannot Be Deleted", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }

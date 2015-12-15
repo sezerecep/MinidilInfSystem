@@ -84,12 +84,16 @@
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
-            this.BTedtdelete = new System.Windows.Forms.Button();
             this.BTedtcancel = new System.Windows.Forms.Button();
             this.BTedtsave = new System.Windows.Forms.Button();
+            this.BTedtdelete = new System.Windows.Forms.Button();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.BTedtdelselles = new System.Windows.Forms.Button();
+            this.BTedtadd = new System.Windows.Forms.Button();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.DGV1 = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
@@ -101,6 +105,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.CBedtlevel = new System.Windows.Forms.ComboBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.CBedtclass = new System.Windows.Forms.ComboBox();
+            this.CBedtDay = new System.Windows.Forms.ComboBox();
+            this.CBedthour = new System.Windows.Forms.ComboBox();
+            this.Cbedtteac = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.tableLayoutPanel8.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
@@ -131,14 +145,18 @@
             this.tableLayoutPanel17.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel25.SuspendLayout();
+            this.tableLayoutPanel19.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
+            this.tableLayoutPanel20.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            this.tableLayoutPanel22.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel8
@@ -860,6 +878,7 @@
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel25, 1, 0);
+            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel19, 0, 0);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 295);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
@@ -875,9 +894,9 @@
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel25.Controls.Add(this.BTedtdelete, 0, 0);
             this.tableLayoutPanel25.Controls.Add(this.BTedtcancel, 1, 0);
             this.tableLayoutPanel25.Controls.Add(this.BTedtsave, 2, 0);
+            this.tableLayoutPanel25.Controls.Add(this.BTedtdelete, 0, 0);
             this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel25.Location = new System.Drawing.Point(601, 3);
             this.tableLayoutPanel25.Name = "tableLayoutPanel25";
@@ -886,24 +905,6 @@
             this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 114F));
             this.tableLayoutPanel25.Size = new System.Drawing.Size(194, 114);
             this.tableLayoutPanel25.TabIndex = 0;
-            // 
-            // BTedtdelete
-            // 
-            this.BTedtdelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.BTedtdelete.BackColor = System.Drawing.Color.Transparent;
-            this.BTedtdelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTedtdelete.BackgroundImage")));
-            this.BTedtdelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BTedtdelete.FlatAppearance.BorderSize = 0;
-            this.BTedtdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTedtdelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.BTedtdelete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BTedtdelete.Location = new System.Drawing.Point(3, 22);
-            this.BTedtdelete.Name = "BTedtdelete";
-            this.BTedtdelete.Size = new System.Drawing.Size(58, 69);
-            this.BTedtdelete.TabIndex = 7;
-            this.BTedtdelete.Text = "Delete";
-            this.BTedtdelete.UseVisualStyleBackColor = false;
-            this.BTedtdelete.Click += new System.EventHandler(this.BTedtdelete_Click);
             // 
             // BTedtcancel
             // 
@@ -941,13 +942,84 @@
             this.BTedtsave.UseVisualStyleBackColor = false;
             this.BTedtsave.Click += new System.EventHandler(this.BTedtsave_Click);
             // 
+            // BTedtdelete
+            // 
+            this.BTedtdelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BTedtdelete.BackColor = System.Drawing.Color.Transparent;
+            this.BTedtdelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTedtdelete.BackgroundImage")));
+            this.BTedtdelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTedtdelete.FlatAppearance.BorderSize = 0;
+            this.BTedtdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTedtdelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTedtdelete.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTedtdelete.Location = new System.Drawing.Point(3, 22);
+            this.BTedtdelete.Name = "BTedtdelete";
+            this.BTedtdelete.Size = new System.Drawing.Size(58, 69);
+            this.BTedtdelete.TabIndex = 7;
+            this.BTedtdelete.Text = "Delete";
+            this.BTedtdelete.UseVisualStyleBackColor = false;
+            this.BTedtdelete.Click += new System.EventHandler(this.BTedtdelete_Click);
+            // 
+            // tableLayoutPanel19
+            // 
+            this.tableLayoutPanel19.ColumnCount = 4;
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel19.Controls.Add(this.BTedtdelselles, 1, 0);
+            this.tableLayoutPanel19.Controls.Add(this.BTedtadd, 0, 0);
+            this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            this.tableLayoutPanel19.RowCount = 1;
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(592, 114);
+            this.tableLayoutPanel19.TabIndex = 1;
+            // 
+            // BTedtdelselles
+            // 
+            this.BTedtdelselles.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BTedtdelselles.BackColor = System.Drawing.Color.Transparent;
+            this.BTedtdelselles.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTedtdelselles.BackgroundImage")));
+            this.BTedtdelselles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTedtdelselles.FlatAppearance.BorderSize = 0;
+            this.BTedtdelselles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTedtdelselles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTedtdelselles.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTedtdelselles.Location = new System.Drawing.Point(151, 24);
+            this.BTedtdelselles.Name = "BTedtdelselles";
+            this.BTedtdelselles.Size = new System.Drawing.Size(63, 66);
+            this.BTedtdelselles.TabIndex = 7;
+            this.BTedtdelselles.Text = "Delete Selected Lesson(s)";
+            this.BTedtdelselles.UseVisualStyleBackColor = false;
+            this.BTedtdelselles.Click += new System.EventHandler(this.BTedtdelselles_Click);
+            // 
+            // BTedtadd
+            // 
+            this.BTedtadd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BTedtadd.BackColor = System.Drawing.Color.Transparent;
+            this.BTedtadd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTedtadd.BackgroundImage")));
+            this.BTedtadd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BTedtadd.FlatAppearance.BorderSize = 0;
+            this.BTedtadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTedtadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BTedtadd.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTedtadd.Location = new System.Drawing.Point(83, 25);
+            this.BTedtadd.Name = "BTedtadd";
+            this.BTedtadd.Size = new System.Drawing.Size(62, 64);
+            this.BTedtadd.TabIndex = 7;
+            this.BTedtadd.Text = "Add";
+            this.BTedtadd.UseVisualStyleBackColor = false;
+            this.BTedtadd.Click += new System.EventHandler(this.BTedtadd_Click);
+            // 
             // tableLayoutPanel21
             // 
             this.tableLayoutPanel21.ColumnCount = 2;
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel21.Controls.Add(this.groupBox4, 0, 0);
-            this.tableLayoutPanel21.Controls.Add(this.groupBox3, 0, 0);
+            this.tableLayoutPanel21.Controls.Add(this.groupBox4, 1, 0);
+            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel20, 0, 0);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel21.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel21.Name = "tableLayoutPanel21";
@@ -963,13 +1035,15 @@
             this.groupBox4.Location = new System.Drawing.Point(322, 3);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(473, 280);
-            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Classes and Time Information";
             // 
             // DGV1
             // 
-            this.DGV1.AllowUserToOrderColumns = true;
+            this.DGV1.AllowUserToAddRows = false;
+            this.DGV1.AllowUserToResizeColumns = false;
+            this.DGV1.AllowUserToResizeRows = false;
             this.DGV1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -978,13 +1052,28 @@
             this.DGV1.Size = new System.Drawing.Size(467, 261);
             this.DGV1.TabIndex = 0;
             // 
+            // tableLayoutPanel20
+            // 
+            this.tableLayoutPanel20.ColumnCount = 1;
+            this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel20.Controls.Add(this.groupBox3, 0, 0);
+            this.tableLayoutPanel20.Controls.Add(this.groupBox5, 0, 1);
+            this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            this.tableLayoutPanel20.RowCount = 2;
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42F));
+            this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58F));
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(313, 280);
+            this.tableLayoutPanel20.TabIndex = 4;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.tableLayoutPanel15);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(313, 280);
+            this.groupBox3.Size = new System.Drawing.Size(307, 111);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lesson Information";
@@ -1007,22 +1096,19 @@
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 7;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(307, 261);
+            this.tableLayoutPanel15.RowCount = 3;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(301, 92);
             this.tableLayoutPanel15.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 12);
+            this.label7.Location = new System.Drawing.Point(43, 8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 0;
@@ -1032,7 +1118,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 49);
+            this.label8.Location = new System.Drawing.Point(16, 38);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 13);
             this.label8.TabIndex = 0;
@@ -1041,24 +1127,24 @@
             // TBedtname
             // 
             this.TBedtname.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TBedtname.Location = new System.Drawing.Point(95, 8);
+            this.TBedtname.Location = new System.Drawing.Point(93, 5);
             this.TBedtname.Name = "TBedtname";
-            this.TBedtname.Size = new System.Drawing.Size(162, 20);
+            this.TBedtname.Size = new System.Drawing.Size(159, 20);
             this.TBedtname.TabIndex = 1;
             // 
             // TBedtbooks
             // 
             this.TBedtbooks.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TBedtbooks.Location = new System.Drawing.Point(95, 45);
+            this.TBedtbooks.Location = new System.Drawing.Point(93, 35);
             this.TBedtbooks.Name = "TBedtbooks";
-            this.TBedtbooks.Size = new System.Drawing.Size(162, 20);
+            this.TBedtbooks.Size = new System.Drawing.Size(159, 20);
             this.TBedtbooks.TabIndex = 1;
             // 
             // pictureBox6
             // 
             this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(263, 6);
+            this.pictureBox6.Location = new System.Drawing.Point(258, 3);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(24, 24);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1069,7 +1155,7 @@
             // 
             this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(263, 43);
+            this.pictureBox7.Location = new System.Drawing.Point(258, 33);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(24, 24);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1080,7 +1166,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(50, 86);
+            this.label10.Location = new System.Drawing.Point(48, 69);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(39, 13);
             this.label10.TabIndex = 0;
@@ -1090,21 +1176,150 @@
             // 
             this.CBedtlevel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.CBedtlevel.FormattingEnabled = true;
-            this.CBedtlevel.Location = new System.Drawing.Point(95, 82);
+            this.CBedtlevel.Location = new System.Drawing.Point(93, 65);
             this.CBedtlevel.Name = "CBedtlevel";
-            this.CBedtlevel.Size = new System.Drawing.Size(162, 21);
+            this.CBedtlevel.Size = new System.Drawing.Size(159, 21);
             this.CBedtlevel.TabIndex = 13;
             // 
             // pictureBox8
             // 
             this.pictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(263, 80);
+            this.pictureBox8.Location = new System.Drawing.Point(258, 64);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(24, 24);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox8.TabIndex = 12;
             this.pictureBox8.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.tableLayoutPanel22);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(3, 120);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(307, 157);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Adding";
+            // 
+            // tableLayoutPanel22
+            // 
+            this.tableLayoutPanel22.ColumnCount = 3;
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel22.Controls.Add(this.label11, 0, 0);
+            this.tableLayoutPanel22.Controls.Add(this.CBedtclass, 1, 0);
+            this.tableLayoutPanel22.Controls.Add(this.CBedtDay, 1, 1);
+            this.tableLayoutPanel22.Controls.Add(this.CBedthour, 1, 2);
+            this.tableLayoutPanel22.Controls.Add(this.Cbedtteac, 1, 3);
+            this.tableLayoutPanel22.Controls.Add(this.label12, 0, 1);
+            this.tableLayoutPanel22.Controls.Add(this.label13, 0, 2);
+            this.tableLayoutPanel22.Controls.Add(this.label16, 0, 3);
+            this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            this.tableLayoutPanel22.RowCount = 4;
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(301, 138);
+            this.tableLayoutPanel22.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(49, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Class :";
+            // 
+            // CBedtclass
+            // 
+            this.CBedtclass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBedtclass.FormattingEnabled = true;
+            this.CBedtclass.Location = new System.Drawing.Point(93, 6);
+            this.CBedtclass.Name = "CBedtclass";
+            this.CBedtclass.Size = new System.Drawing.Size(159, 21);
+            this.CBedtclass.TabIndex = 10;
+            // 
+            // CBedtDay
+            // 
+            this.CBedtDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBedtDay.FormattingEnabled = true;
+            this.CBedtDay.Items.AddRange(new object[] {
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"});
+            this.CBedtDay.Location = new System.Drawing.Point(93, 40);
+            this.CBedtDay.Name = "CBedtDay";
+            this.CBedtDay.Size = new System.Drawing.Size(159, 21);
+            this.CBedtDay.TabIndex = 10;
+            // 
+            // CBedthour
+            // 
+            this.CBedthour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CBedthour.FormattingEnabled = true;
+            this.CBedthour.Items.AddRange(new object[] {
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00"});
+            this.CBedthour.Location = new System.Drawing.Point(93, 74);
+            this.CBedthour.Name = "CBedthour";
+            this.CBedthour.Size = new System.Drawing.Size(159, 21);
+            this.CBedthour.TabIndex = 10;
+            // 
+            // Cbedtteac
+            // 
+            this.Cbedtteac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cbedtteac.FormattingEnabled = true;
+            this.Cbedtteac.Location = new System.Drawing.Point(93, 109);
+            this.Cbedtteac.Name = "Cbedtteac";
+            this.Cbedtteac.Size = new System.Drawing.Size(159, 21);
+            this.Cbedtteac.TabIndex = 10;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(55, 44);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 13);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Day :";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(51, 78);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 13);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Hour :";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(34, 113);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 13);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "Teacher :";
             // 
             // FMcrtedtlesson
             // 
@@ -1156,15 +1371,20 @@
             this.tableLayoutPanel17.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
             this.tableLayoutPanel25.ResumeLayout(false);
+            this.tableLayoutPanel19.ResumeLayout(false);
             this.tableLayoutPanel21.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
+            this.tableLayoutPanel20.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.tableLayoutPanel22.ResumeLayout(false);
+            this.tableLayoutPanel22.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1208,7 +1428,6 @@
         private System.Windows.Forms.Button BTedtdelete;
         private System.Windows.Forms.Button BTedtcancel;
         private System.Windows.Forms.Button BTedtsave;
-        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.Label label7;
@@ -1229,10 +1448,8 @@
         private System.Windows.Forms.CheckedListBox CLB1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox CBclass;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox CBday;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox CBhour;
@@ -1241,6 +1458,23 @@
         private System.Windows.Forms.ComboBox CBteacher;
         private System.Windows.Forms.Button BTremove;
         private System.Windows.Forms.Button BTadd;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
+        private System.Windows.Forms.Button BTedtdelselles;
+        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView DGV1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
+        private System.Windows.Forms.Button BTedtadd;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox CBedtclass;
+        private System.Windows.Forms.ComboBox CBedtDay;
+        private System.Windows.Forms.ComboBox CBedthour;
+        private System.Windows.Forms.ComboBox Cbedtteac;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox CBclass;
+        private System.Windows.Forms.ComboBox CBday;
     }
 }

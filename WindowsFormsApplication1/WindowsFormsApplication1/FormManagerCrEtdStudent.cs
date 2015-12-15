@@ -35,7 +35,7 @@ namespace MinidilInformationSystem
                     if (TBmail.Text != "" && TBname.Text != "" && TBphone.Text != "" && TBparname.Text != "" && TBblood.Text != "" && TBparsurname.Text != "" && TBsurname.Text != "" && CBlevel.Text != "" && TBparmail.Text != "" && TBparphone.Text != "" && TBtc.Text != "" && (RBfem.Checked || RBmal.Checked))
                     {
                         bool suc;
-                        bool suc1;
+                        bool suc1 = false;
                         bool suc2 = false;
                         if (RBfem.Checked)
                         {
@@ -45,6 +45,7 @@ namespace MinidilInformationSystem
                                                                                                 + "','What is your parent name?','" + TBparname.Text
                                                                                                 + "',NULL,NULL,'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                                                                                                 + "',NULL,NULL,'Student');");
+                            if(suc)
                             suc1 = con.NonReturnQuery("INSERT INTO students VALUES(" + TBtc.Text + ",'" + CBlevel.Text + "','" + TBparname.Text + "','" + TBparsurname.Text + "','" + TBparphone.Text + "','" + TBparmail.Text + "','" + TBallerg.Text + "','" + TBblood.Text + "');");
                         }
                         else
@@ -55,24 +56,33 @@ namespace MinidilInformationSystem
                                                                                                 + "','What is your parent name?','" + TBparname.Text
                                                                                                 + "',NULL,NULL,'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                                                                                                 + "',NULL,NULL,'Student');");
+                            if (suc)
                             suc1 = con.NonReturnQuery("INSERT INTO students VALUES(" + TBtc.Text + ",'" + CBlevel.Text + "','" + TBparname.Text + "','" + TBparsurname.Text + "','" + TBparphone.Text + "','" + TBparmail.Text + "','" + TBallerg.Text + "','" + TBblood.Text + "');");
                         }
-                        foreach (string item in CLB1.Items)
+                        if (suc1)
                         {
-                            string[] bol = item.Split(' ');
-                            DataTable clsize = con.ReturningQuery("CALL classsizefromnamelesson('" + bol[0] + "','" + bol[1] + "');");
-                            if (clsize.Rows[0].ItemArray[0].ToString() == "15")
+                            foreach (string item in CLB1.Items)
                             {
-                               DialogResult res1 = MessageBox.Show("This Class Has 15 Students ", "Class Size Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                suc2 = false;
-                            }
-                            else
-                            {
-                                suc2 = con.NonReturnQuery("INSERT INTO students_lessons_classes VALUES(" + TBtc.Text + ",'" + bol[1] + "','" + bol[0] + "','" + CBlevel.SelectedItem.ToString() + "');");
+                                string[] bol = item.Split(' ');
+                                DataTable clsize = con.ReturningQuery("CALL classsizefromnamelesson('" + bol[0] + "','" + bol[1] + "');");
+                                if (clsize.Rows[0].ItemArray[0].ToString() == "15")
+                                {
+                                    DialogResult res1 = MessageBox.Show("This Class Has 15 Students ", "Class Size Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    suc2 = false;
+                                }
+                                else
+                                {
+                                    suc2 = con.NonReturnQuery("INSERT INTO students_lessons_classes VALUES(" + TBtc.Text + ",'" + bol[1] + "','" + bol[0] + "','" + CBlevel.SelectedItem.ToString() + "');");
+                                    if (suc2)
+                                    {
+                                        con.NonReturnQuery("UPDATE lessons_classes_size SET class_size=class_size+1 WHERE lesson_name='" + bol[0] + "', AND class_name='" + bol[1] + "';");
+                                    }
+                                }
                             }
                         }
-                        if (suc && suc1 && suc2)
+                        if (suc2)
                         {
+                            
                             DialogResult res1;
                             res1 = MessageBox.Show("Changes Saved Successfully", "Changes Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             if (res1 == DialogResult.OK)
@@ -155,6 +165,7 @@ namespace MinidilInformationSystem
 
         private void BTadd_Click(object sender, EventArgs e)
         {
+            if(CBlesson.Text!="")
             CLB1.Items.Add(CBlesson.SelectedItem.ToString());
         }
 
@@ -272,7 +283,8 @@ namespace MinidilInformationSystem
 
         private void Btedtadd_Click(object sender, EventArgs e)
         {
-            CLB2.Items.Add(CBedtlesson.SelectedItem.ToString());
+            if (CBedtlesson.Text != "")
+                CLB2.Items.Add(CBedtlesson.SelectedItem.ToString());
         }
 
         private void BTedtremove_Click(object sender, EventArgs e)
@@ -388,7 +400,8 @@ namespace MinidilInformationSystem
                             {
                                 string[] bol = CLB2.Items[i].ToString().Split(' ');
                                 DataTable clsize = con.ReturningQuery("CALL classsizefromnamelesson('" + bol[0] + "','" + bol[1] + "');");
-                                if (clsize.Rows[0].ItemArray[0].ToString() == "15")
+                         
+                                if (clsize.Rows[0].ItemArray[0].ToString() == "15"&&clsize.TableName!="Connected but Empty")
                                 {
                                     DialogResult res1 = MessageBox.Show("This Class Has 15 Students ", "Class Size Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     suc3 = false;
@@ -396,7 +409,7 @@ namespace MinidilInformationSystem
                                 else
                                 {
                                     suc3 = con.NonReturnQuery("INSERT INTO students_lessons_classes VALUES(" + TBedttc.Text + ",'" + bol[1] + "','" + bol[0] + "','" + CBedtlvl.Text + "');");
-                                    con.NonReturnQuery("UPDATE lessons_classes_size SET class_size=class_size+1 WHERE lesson_name='" + bol[0] + "',class_name='" + bol[1] + "';");
+                                    con.NonReturnQuery("UPDATE lessons_classes_size SET class_size=class_size+1 WHERE lesson_name='" + bol[0] + "'AND class_name='" + bol[1] + "';");
                                 }
                                 
                             }
@@ -411,7 +424,7 @@ namespace MinidilInformationSystem
                             {
                                 string[] bol = oldless.Items[i].ToString().Split(' ');
                                 suc4 = con.NonReturnQuery("DELETE FROM students_lessons_classes WHERE (student_tc=" + TBedttc.Text + " AND class_name='" + bol[1] + "' AND lesson_name='" + bol[0] + "' AND level_name='" + CBedtlvl.Text + "');");
-                                con.NonReturnQuery("UPDATE lessons_classes_size SET class_size=class_size-1 WHERE lesson_name='" + bol[0] + "',class_name='" + bol[1] + "';");
+                                con.NonReturnQuery("UPDATE lessons_classes_size SET class_size=class_size-1 WHERE lesson_name='" + bol[0] + "' AND class_name='" + bol[1] + "';");
                             }
                         }
                         if (suc&&suc1)
