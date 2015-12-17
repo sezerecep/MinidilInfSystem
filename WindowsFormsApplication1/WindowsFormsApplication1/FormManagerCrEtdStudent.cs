@@ -32,7 +32,7 @@ namespace MinidilInformationSystem
                 DatabaseConnection con = new DatabaseConnection();
                 if (con.is_Connected())
                 {
-                    if (TBmail.Text != "" && TBname.Text != "" && TBphone.Text != "" && TBparname.Text != "" && TBblood.Text != "" && TBparsurname.Text != "" && TBsurname.Text != "" && CBlevel.Text != "" && TBparmail.Text != "" && TBparphone.Text != "" && TBtc.Text != "" && (RBfem.Checked || RBmal.Checked))
+                    if (TBmail.Text != "" && TBname.Text != "" && TBphone.Text != "" && TBparname.Text != "" && CBblood1.Text != "" && TBparsurname.Text != "" && TBsurname.Text != "" && CBlevel.Text != "" && TBparmail.Text != "" && TBparphone.Text != "" && TBtc.Text != "" && (RBfem.Checked || RBmal.Checked))
                     {
                         bool suc;
                         bool suc1 = false;
@@ -46,7 +46,7 @@ namespace MinidilInformationSystem
                                                                                                 + "',NULL,NULL,'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                                                                                                 + "',NULL,NULL,'Student');");
                             if(suc)
-                            suc1 = con.NonReturnQuery("INSERT INTO students VALUES(" + TBtc.Text + ",'" + CBlevel.Text + "','" + TBparname.Text + "','" + TBparsurname.Text + "','" + TBparphone.Text + "','" + TBparmail.Text + "','" + TBallerg.Text + "','" + TBblood.Text + "');");
+                            suc1 = con.NonReturnQuery("INSERT INTO students VALUES(" + TBtc.Text + ",'" + CBlevel.Text + "','" + TBparname.Text + "','" + TBparsurname.Text + "','" + TBparphone.Text + "','" + TBparmail.Text + "','" + TBallerg.Text + "','" + CBblood1.Text + "');");
                         }
                         else
                         {
@@ -57,7 +57,7 @@ namespace MinidilInformationSystem
                                                                                                 + "',NULL,NULL,'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                                                                                                 + "',NULL,NULL,'Student');");
                             if (suc)
-                            suc1 = con.NonReturnQuery("INSERT INTO students VALUES(" + TBtc.Text + ",'" + CBlevel.Text + "','" + TBparname.Text + "','" + TBparsurname.Text + "','" + TBparphone.Text + "','" + TBparmail.Text + "','" + TBallerg.Text + "','" + TBblood.Text + "');");
+                                suc1 = con.NonReturnQuery("INSERT INTO students VALUES(" + TBtc.Text + ",'" + CBlevel.Text + "','" + TBparname.Text + "','" + TBparsurname.Text + "','" + TBparphone.Text + "','" + TBparmail.Text + "','" + TBallerg.Text + "','" + CBblood1.Text + "');");
                         }
                         if (suc1)
                         {
@@ -125,6 +125,8 @@ namespace MinidilInformationSystem
 
         private void FMcrtedtstudent_Load(object sender, EventArgs e)
         {
+            DTP1.MaxDate = DateTime.Now;
+            DTP2.MaxDate = DateTime.Now;
             DatabaseConnection con = new DatabaseConnection();
             if (con.is_Connected())
             {
@@ -249,7 +251,7 @@ namespace MinidilInformationSystem
                     TBedtallergies.Text = tab.Rows[0].ItemArray[0].ToString();
                     tab.Clear();
                     tab = con.ReturningQuery("CALL getbloodtype_tc (" + TBedttcin.Text + ");");
-                    TBedtblood.Text = tab.Rows[0].ItemArray[0].ToString();
+                    CBblood2.Text = tab.Rows[0].ItemArray[0].ToString();
                     tab.Clear();
                     tab = con.ReturningQuery("CALL getstudentlevel_tc(" + TBedttcin.Text + "); ");
                     CBedtlvl.Text= tab.Rows[0].ItemArray[0].ToString();
@@ -359,7 +361,7 @@ namespace MinidilInformationSystem
                 DatabaseConnection con = new DatabaseConnection();
                 if (con.is_Connected())
                 {
-                    if (TBedtmail.Text != "" && TBedtname.Text != "" && TBedtphone.Text != "" && TBedtparname.Text != "" && TBedtblood.Text != "" && TBedtparsurname.Text != "" && TBedtsurname.Text != "" && CBedtlvl.Text != "" && TBedtparmail.Text != "" && TBedtparmobile.Text != "" && TBedttc.Text != "")
+                    if (TBedtmail.Text != "" && TBedtname.Text != "" && TBedtphone.Text != "" && TBedtparname.Text != "" && CBblood2.Text != "" && TBedtparsurname.Text != "" && TBedtsurname.Text != "" && CBedtlvl.Text != "" && TBedtparmail.Text != "" && TBedtparmobile.Text != "" && TBedttc.Text != "")
                     {
                         bool suc;
                         bool suc1;
@@ -375,7 +377,7 @@ namespace MinidilInformationSystem
                                  + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE tc='" + TBedttcin.Text + "'");
                             suc1 = con.NonReturnQuery("UPDATE students SET level_name='" + CBedtlvl.Text + "',parent_name='"
                                 + TBedtparname.Text + "',parent_surname='" + TBedtparsurname.Text + "',parent_phone='" + TBedtparmobile.Text + "',parent_email='"
-                                + TBedtparmail.Text + "',allergy='" + TBedtallergies.Text + "',blood_type='" + TBedtblood.Text + "' WHERE student_tc='" + TBedttc.Text + "'");
+                                + TBedtparmail.Text + "',allergy='" + TBedtallergies.Text + "',blood_type='" + CBblood2.Text + "' WHERE student_tc='" + TBedttc.Text + "'");
                             
                         }
                         else
@@ -388,7 +390,7 @@ namespace MinidilInformationSystem
                                  + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE tc='" + TBedttcin.Text + "'");
                             suc1 = con.NonReturnQuery("UPDATE students SET level_name='" + CBedtlvl.Text + "',parent_name='"
                                 + TBedtparname.Text + "',parent_surname='" + TBedtparsurname.Text + "',parent_phone='" + TBedtparmobile.Text + "',parent_email='"
-                                + TBedtparmail.Text + "',allergy='" + TBedtallergies.Text + "',blood_type='" + TBedtblood.Text + "' WHERE student_tc='" + TBedttc.Text + "'");
+                                + TBedtparmail.Text + "',allergy='" + TBedtallergies.Text + "',blood_type='" + CBblood2.Text + "' WHERE student_tc='" + TBedttc.Text + "'");
                         }
                         for (int i = 0; i < CLB2.Items.Count; i++)
                         {
@@ -466,5 +468,7 @@ namespace MinidilInformationSystem
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+     
     }
 }
