@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MinidilInformationSystem
-{
+{ 
     public partial class FMedtexams : Form
     {
         DataTable NDGV =new DataTable();
