@@ -32,7 +32,7 @@ namespace MinidilInformationSystem
             else
                 this.toolStripStatusLabel1.Text = "Database Connection Failed...";
 
-            BTlogin.Hide();
+           
 
         }
 
