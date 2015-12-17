@@ -29,7 +29,8 @@ namespace MinidilInformationSystem
                 tab1.Columns[0].ColumnName = "Level";
                 tab1.Columns[1].ColumnName = "Lesson";
                 tab1.Columns[2].ColumnName = "Class";
-
+                tab1.Columns[3].ColumnName = "Day";
+                tab1.Columns[4].ColumnName = "Time";
                 DGVlessons.DataSource = tab1;
             }
         }
@@ -52,7 +53,8 @@ namespace MinidilInformationSystem
             if (con.is_Connected())
             {
                 DataTable tab;
-                tab = con.ReturningQuery("CALL getstudentsoflessons('" + tab2.Rows[index].ItemArray[1].ToString() +"','"+tab2.Rows[index].ItemArray[2].ToString() + "');");
+                tab = con.ReturningQuery("CALL getstudentsoflessons('"+tab2.Rows[index].ItemArray[0].ToString()+"','" + tab2.Rows[index].ItemArray[1].ToString() +"','"+tab2.Rows[index].ItemArray[2].ToString() 
+                    +"','"+ tab2.Rows[index].ItemArray[3].ToString() + "','" + tab2.Rows[index].ItemArray[4].ToString() + "');");
                 if (tab.TableName != "Connected but Empty")
                 {
                     tab.Columns[0].ColumnName = "Name";
