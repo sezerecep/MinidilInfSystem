@@ -14,6 +14,8 @@ namespace MinidilInformationSystem
     {
         MySqlConnection connection;
 
+        // Erkn değişiklik
+
         public bool is_Connected()
         {
             try
