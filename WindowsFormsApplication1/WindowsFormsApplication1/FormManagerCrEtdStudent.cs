@@ -63,7 +63,14 @@ namespace MinidilInformationSystem
                         {
                             foreach (string item in CLB1.Items)
                             {
+                                
                                 string[] bol = item.Split(' ');
+                                DataTable table = con.ReturningQuery("SELECT exam_name FROM exams WHERE lesson_name='" + bol[0] + "' AND class_name='" + bol[1] + "';");
+                                foreach (DataRow rw in table.Rows)
+                                {
+                                    if(table.TableName!="Connected but Empty")
+                                    con.NonReturnQuery("INSERT INTO students_exams VALUES(" + TBtc.Text + ",'" + rw.ItemArray[0].ToString() + "',NULL);");
+                                }
                                 DataTable clsize = con.ReturningQuery("CALL classsizefromnamelesson('" + bol[0] + "','" + bol[1] + "');");
                                 if (clsize.Rows[0].ItemArray[0].ToString() == "15")
                                 {
@@ -75,7 +82,7 @@ namespace MinidilInformationSystem
                                     suc2 = con.NonReturnQuery("INSERT INTO students_lessons_classes VALUES(" + TBtc.Text + ",'" + bol[1] + "','" + bol[0] + "','" + CBlevel.SelectedItem.ToString() + "');");
                                     if (suc2)
                                     {
-                                        con.NonReturnQuery("UPDATE lessons_classes_size SET class_size=class_size+1 WHERE lesson_name='" + bol[0] + "', AND class_name='" + bol[1] + "';");
+                                        con.NonReturnQuery("UPDATE lessons_classes_size SET class_size=class_size+1 WHERE lesson_name='" + bol[0] + "' AND class_name='" + bol[1] + "';");
                                     }
                                 }
                             }
@@ -410,6 +417,12 @@ namespace MinidilInformationSystem
                                 {
                                     suc3 = con.NonReturnQuery("INSERT INTO students_lessons_classes VALUES(" + TBedttc.Text + ",'" + bol[1] + "','" + bol[0] + "','" + CBedtlvl.Text + "');");
                                     con.NonReturnQuery("UPDATE lessons_classes_size SET class_size=class_size+1 WHERE lesson_name='" + bol[0] + "'AND class_name='" + bol[1] + "';");
+                                    DataTable table = con.ReturningQuery("SELECT exam_name FROM exams WHERE lesson_name='" + bol[0] + "' AND class_name='" + bol[1] + "';");
+                                    foreach (DataRow rw in table.Rows)
+                                    {
+                                        if (table.TableName != "Connected but Empty")
+                                            con.NonReturnQuery("INSERT INTO students_exams VALUES(" + TBedttcin.Text + ",'" + rw.ItemArray[0].ToString() + "',NULL);");
+                                    }
                                 }
                                 
                             }
@@ -425,6 +438,12 @@ namespace MinidilInformationSystem
                                 string[] bol = oldless.Items[i].ToString().Split(' ');
                                 suc4 = con.NonReturnQuery("DELETE FROM students_lessons_classes WHERE (student_tc=" + TBedttc.Text + " AND class_name='" + bol[1] + "' AND lesson_name='" + bol[0] + "' AND level_name='" + CBedtlvl.Text + "');");
                                 con.NonReturnQuery("UPDATE lessons_classes_size SET class_size=class_size-1 WHERE lesson_name='" + bol[0] + "' AND class_name='" + bol[1] + "';");
+                                DataTable table = con.ReturningQuery("SELECT exam_name FROM exams WHERE lesson_name='" + bol[0] + "' AND class_name='" + bol[1] + "';");
+                                foreach (DataRow rw in table.Rows)
+                                {
+                                    if (table.TableName != "Connected but Empty")
+                                        con.NonReturnQuery("DELETE FROM students_exams WHERE student_tc=" + TBedttcin.Text + " AND exam_name='" + rw.ItemArray[0].ToString() + "';");
+                                }
                             }
                         }
                         if (suc&&suc1)
