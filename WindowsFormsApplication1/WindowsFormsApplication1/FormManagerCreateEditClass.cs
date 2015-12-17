@@ -31,7 +31,7 @@ namespace MinidilInformationSystem
                     bool ret;
                     if (TBclassname.Text != "")
                     {
-                        ret = con.NonReturnQuery("INSERT INTO classes VALUES('" + TBclassname.Text + "',0,'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',NULL,NULL);");
+                        ret = con.NonReturnQuery("INSERT INTO classes VALUES('" + TBclassname.Text + "',0,'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',NULL);");
                         if (ret)
                         {
                             MessageBox.Show("Changes Saved Succesfully", "Save Succcesfull", MessageBoxButtons.OK, MessageBoxIcon.Information);

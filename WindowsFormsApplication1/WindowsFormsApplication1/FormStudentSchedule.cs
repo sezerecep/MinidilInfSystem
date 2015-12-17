@@ -26,10 +26,13 @@ namespace MinidilInformationSystem
             {
                 DataTable tab = con.ReturningQuery("CALL tcfromemail ('" + mail + "')");
                 DataTable tab1 = con.ReturningQuery("CALL getstudentschedules (" + tab.Rows[0].ItemArray[0].ToString() + ");");
-                tab1.Columns[0].ColumnName = "Day";
-                tab1.Columns[1].ColumnName = "Time";
-                tab1.Columns[2].ColumnName = "Lesson";
-                tab1.Columns[3].ColumnName = "Class";
+                if (tab1.TableName != "Connected but Empty")
+                {
+                    tab1.Columns[0].ColumnName = "Day";
+                    tab1.Columns[1].ColumnName = "Time";
+                    tab1.Columns[2].ColumnName = "Lesson";
+                    tab1.Columns[3].ColumnName = "Class";
+                }
                 
                 DGV1.DataSource = tab1;
             }

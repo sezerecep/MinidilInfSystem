@@ -184,7 +184,7 @@ namespace MinidilInformationSystem
             DatabaseConnection con = new DatabaseConnection();
             if (con.is_Connected())
             {
-                if (TBedtlessnamein.Text != "" && CBedtpicklvl.Text != null)
+                if (TBedtlessnamein.Text != "" && CBedtpicklvl.Text != "")
                 {
 
                     DataTable tab = con.ReturningQuery("CALL getdatetimelessonsclasses('" + TBedtlessnamein.Text + "','" + CBedtpicklvl.SelectedItem.ToString() + "');");
@@ -281,34 +281,42 @@ namespace MinidilInformationSystem
                         {
                             // Gride girilenlerin doğruluğu kontrol eedilmemiş
                             bool ret = false;
-                            for (int i = 0; i < DGV1.Rows.Count - 1; i++)
+                            for (int i = 0; i < DGV1.Rows.Count-1; i++)
                             {
-                                DataTable tab2 = con.ReturningQuery("CALL tcfromname ('" + NDGV.Rows[i].ItemArray[3].ToString() + "','" + NDGV.Rows[i].ItemArray[4].ToString() + "');");
-                                DataTable tab3 = con.ReturningQuery("CALL tcfromname ('" + DGV1.Rows[i].Cells[3].Value.ToString() + "','" + DGV1.Rows[i].Cells[4].Value.ToString() + "');");
-                                if (tab3.Rows[0].ItemArray[0].ToString() == tab2.Rows[0].ItemArray[0].ToString())
-                                {
-                                    ret = con.NonReturnQuery("UPDATE lessons_classes SET lesson_name='" + TBedtname.Text + "',class_name ='" + DGV1.Rows[i].Cells[0].Value.ToString() + "',weekday='" + DGV1.Rows[i].Cells[1].Value.ToString()
-                                    + "',lessons_classes_time='" + DGV1.Rows[i].Cells[2].Value.ToString() + "',level_name='" + CBedtlevel.SelectedItem.ToString() + "',teacher_tc=" + tab3.Rows[0].ItemArray[0].ToString() + " WHERE (lesson_name='" + TBedtlessnamein.Text + "' AND class_name='" + NDGV.Rows[i].ItemArray[0].ToString() +
-                                    "' AND weekday='" + NDGV.Rows[i].ItemArray[1].ToString() + "' AND lessons_classes_time='" + NDGV.Rows[i].ItemArray[2].ToString() + "' AND level_name='" + CBedtpicklvl.Text + "' AND teacher_tc=" + tab2.Rows[0].ItemArray[0].ToString() + ");");
-                                    con.NonReturnQuery("UPDATE lessons_classes SET lesson_name='" + TBedtname.Text + "',class_name ='" + DGV1.Rows[i].Cells[0].Value.ToString() + "' WHERE (lesson_name='" + TBedtlessnamein.Text + "' AND class_name='" + NDGV.Rows[i].ItemArray[0].ToString() + "');");
-                                }
-                                else
-                                {
-                                    DataTable numless = con.ReturningQuery("CALL getnumoflessteacher_tc (" + tab3.Rows[0].ItemArray[0].ToString() + ");");
-                                    if (numless.Rows[0].ItemArray[0].ToString() == "20")
+                                    try
                                     {
-                                        MessageBox.Show("Teacher Has 20 Lessons, No More Lessons Cannot Be Assigned", "Teacher Number Of Lessons Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        ret = false;
-                                    }
-                                    else
+                                    DataTable tab2 = con.ReturningQuery("CALL tcfromname ('" + NDGV.Rows[i].ItemArray[3].ToString() + "','" + NDGV.Rows[i].ItemArray[4].ToString() + "');");
+                                    DataTable tab3 = con.ReturningQuery("CALL tcfromname ('" + DGV1.Rows[i].Cells[3].Value.ToString() + "','" + DGV1.Rows[i].Cells[4].Value.ToString() + "');");
+                                    if (tab3.Rows[0].ItemArray[0].ToString() == tab2.Rows[0].ItemArray[0].ToString())
                                     {
                                         ret = con.NonReturnQuery("UPDATE lessons_classes SET lesson_name='" + TBedtname.Text + "',class_name ='" + DGV1.Rows[i].Cells[0].Value.ToString() + "',weekday='" + DGV1.Rows[i].Cells[1].Value.ToString()
                                         + "',lessons_classes_time='" + DGV1.Rows[i].Cells[2].Value.ToString() + "',level_name='" + CBedtlevel.SelectedItem.ToString() + "',teacher_tc=" + tab3.Rows[0].ItemArray[0].ToString() + " WHERE (lesson_name='" + TBedtlessnamein.Text + "' AND class_name='" + NDGV.Rows[i].ItemArray[0].ToString() +
                                         "' AND weekday='" + NDGV.Rows[i].ItemArray[1].ToString() + "' AND lessons_classes_time='" + NDGV.Rows[i].ItemArray[2].ToString() + "' AND level_name='" + CBedtpicklvl.Text + "' AND teacher_tc=" + tab2.Rows[0].ItemArray[0].ToString() + ");");
-                                        con.NonReturnQuery("UPDATE teachers SET number_of_lessons=number_of_lessons+1 WHERE teacher_tc=" + tab3.Rows[0].ItemArray[0].ToString() + ";");
-                                        con.NonReturnQuery("UPDATE teachers SET number_of_lessons=number_of_lessons-1 WHERE teacher_tc=" + tab2.Rows[0].ItemArray[0].ToString() + ";");
                                         con.NonReturnQuery("UPDATE lessons_classes SET lesson_name='" + TBedtname.Text + "',class_name ='" + DGV1.Rows[i].Cells[0].Value.ToString() + "' WHERE (lesson_name='" + TBedtlessnamein.Text + "' AND class_name='" + NDGV.Rows[i].ItemArray[0].ToString() + "');");
                                     }
+                                    else
+                                    {
+                                        DataTable numless = con.ReturningQuery("CALL getnumoflessteacher_tc (" + tab3.Rows[0].ItemArray[0].ToString() + ");");
+                                        if (numless.Rows[0].ItemArray[0].ToString() == "20")
+                                        {
+                                            MessageBox.Show("Teacher Has 20 Lessons, No More Lessons Cannot Be Assigned", "Teacher Number Of Lessons Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            ret = false;
+                                        }
+                                        else
+                                        {
+                                            ret = con.NonReturnQuery("UPDATE lessons_classes SET lesson_name='" + TBedtname.Text + "',class_name ='" + DGV1.Rows[i].Cells[0].Value.ToString() + "',weekday='" + DGV1.Rows[i].Cells[1].Value.ToString()
+                                            + "',lessons_classes_time='" + DGV1.Rows[i].Cells[2].Value.ToString() + "',level_name='" + CBedtlevel.SelectedItem.ToString() + "',teacher_tc=" + tab3.Rows[0].ItemArray[0].ToString() + " WHERE (lesson_name='" + TBedtlessnamein.Text + "' AND class_name='" + NDGV.Rows[i].ItemArray[0].ToString() +
+                                            "' AND weekday='" + NDGV.Rows[i].ItemArray[1].ToString() + "' AND lessons_classes_time='" + NDGV.Rows[i].ItemArray[2].ToString() + "' AND level_name='" + CBedtpicklvl.Text + "' AND teacher_tc=" + tab2.Rows[0].ItemArray[0].ToString() + ");");
+                                            con.NonReturnQuery("UPDATE teachers SET number_of_lessons=number_of_lessons+1 WHERE teacher_tc=" + tab3.Rows[0].ItemArray[0].ToString() + ";");
+                                            con.NonReturnQuery("UPDATE teachers SET number_of_lessons=number_of_lessons-1 WHERE teacher_tc=" + tab2.Rows[0].ItemArray[0].ToString() + ";");
+                                            con.NonReturnQuery("UPDATE lessons_classes SET lesson_name='" + TBedtname.Text + "',class_name ='" + DGV1.Rows[i].Cells[0].Value.ToString() + "' WHERE (lesson_name='" + TBedtlessnamein.Text + "' AND class_name='" + NDGV.Rows[i].ItemArray[0].ToString() + "');");
+                                        }
+                                    }
+                                }
+                                
+                                catch(Exception ex)
+                                {
+                                    ret = true;
                                 }
                             }
                             if (ret)

@@ -57,9 +57,10 @@ namespace MinidilInformationSystem
             DatabaseConnection con = new DatabaseConnection();
             if (con.is_Connected())
             {
+                CBstudent.Items.Clear();
                 string[] bol = CBlesss.Text.Split(' ');
                 DataTable tab = new DataTable();
-                tab = con.ReturningQuery("CALL getstudentsoflessons('" + bol[0] + "','" + bol[1] + "');");
+                tab = con.ReturningQuery("CALL getstudentsoflessons('" + bol[0] + "','" + bol[1] +"','"+bol[2]+"','"+bol[3]+"');");
                 foreach (DataRow rw in tab.Rows)
                 {
                     CBstudent.Items.Add(rw[0].ToString() + " " + rw[1].ToString());
